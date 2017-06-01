@@ -1,0 +1,47 @@
+extends default
+block head
+	- var devVersion = true
+	- var version = 1
+	- var pageTitle = 'KPN WiFi HotSpots voor snel, betrouwbaar internet'
+	- var bodyClass = 'home'
+block content
+	include _masthead
+	.hero__outer
+		.hero__home-visual-mobile.imgc: img(src="img/#{homeFotoMobile}")
+		.container
+			.row
+				.col-xs-12
+					.hero
+						.row
+							.col-xs-12.col-sm-6.col-md-8
+								+hero-text
+							.hidden-xs-ts.col-ts-8.col-ts-offset-2.col-sm-6.col-sm-offset-0.col-md-4
+								+bel-mij-terug('desktop', 'homepage')
+	.aanbod__outer
+		.container
+			.row
+				.col-xs-12
+					+aanbod
+	.bel-mij-terug--mobile__outer.hidden-sm-lg
+		.container
+			.row
+				.col-xs-12
+					+bel-mij-terug('mobile', 'homepage')
+	.info__outer
+		.container
+			.row
+				.col-ts-6.col-md-4
+					+word-ook
+				.col-ts-6.col-md-4
+					+voordelen
+				.col-ts-12.col-md-4
+					+risicos
+	.home-locaties__outer.hidden-xs-ls
+		.container
+			.row
+				.col-ts-12
+					+locaties
+	include _footer
+
+block scripts
+	script(src="js/placeholder.js")

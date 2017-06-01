@@ -1,0 +1,166 @@
+mixin logo()
+	.masthead__branding__container
+		a.masthead__branding(href='#{homeLink}')
+			//-.masthead__logo.imgch: img(src="img/kpn-logo.svg" onerror="this.src='img/kpn-logo-280x118px.png';this.onerror=null;")
+			.masthead__logo.imgch: img(src="img/kpn-logo-280x118px.png")
+			h1.masthead__site-title #{companyName}
+		
+
+mixin main-nav()
+	.main-nav
+		ul.main-nav__list
+			li.main-nav__item: a(href='#{overLink}') Over KPN WiFi HotSpots
+			li.main-nav__item: a(href='#{serviceLink}') Service#[span.extra &nbsp;& Contact]
+			li.main-nav__item: a(href='#{bestellenLink}') Bestellen
+
+
+mixin secondary-nav()
+	.secondary-nav
+		ul.secondary-nav__list
+			li.secondary-nav__item.secondary-nav__item--service: a(href='#{serviceLink}') #[span.h-ts.v-sm Service & Contact]#[span.h-xs.v-ts.h-sm Service]
+			li.secondary-nav__item: a(href='#{handleidingLink}' target='_blank') Handleiding
+			li.secondary-nav__item: a(href='#{dienstBeschrijvingLink}' target='_blank') Dienstbeschrijving
+			li.secondary-nav__item: a(href='#{locatiesLink}') #[span.h-ts.v-sm KPN WiFi HotSpot locaties]#[span.h-xs.v-ts.h-sm Locaties]
+
+mixin lp-nav()
+	.secondary-nav
+		ul.secondary-nav__list
+			li.secondary-nav__item: a(href='#{cookiesLink}') Cookies
+			li.secondary-nav__item: a(href='#{algemeneVoorwaardenLink}' target='_blank') Algemene voorwaarden
+			li.secondary-nav__item.h-ts.v-md-ib: a(href='#{leveringsVoorwaardenLink}' target='_blank') KPN Algemene Leveringsvoorwaarden
+			li.secondary-nav__item.h-ts.v-md-ib: a(href='#{specifiekeVoorwaardenLink}' target='_blank') Specifieke Voorwaarden en Bepalingen
+
+mixin footer-nav()
+	.footer-nav
+		ul.footer-nav__list
+			li.footer-nav__item.footer-nav__item--mobile: a(href='#{overLink}') Over KPN WiFi HotSpots
+			li.footer-nav__item.footer-nav__item--mobile: a(href='#{serviceLink}') Service & Contact
+			li.footer-nav__item.footer-nav__item--mobile: a(href='#{bestellenLink}') Bestellen
+			li.footer-nav__item.footer-nav__item--mobile: a(href='#{handleidingLink}' target='_blank') Handleiding
+			li.footer-nav__item.footer-nav__item--mobile: a(href='#{dienstBeschrijvingLink}' target='_blank') Dienstbeschrijving
+			li.footer-nav__item.footer-nav__item--mobile: a(href='#{locatiesLink}') KPN WiFi HotSpot locaties
+			li.footer-nav__item: a(href='#{algemeneVoorwaardenLink}' target='_blank') Algemene voorwaarden
+			li.footer-nav__item: a(href='#{cookiesLink}') Cookies
+			li.footer-nav__item: a(href='#{leveringsVoorwaardenLink}' target='_blank') KPN Algemene Leveringsvoorwaarden
+			li.footer-nav__item: a(href='#{specifiekeVoorwaardenLink}' target='_blank') Specifieke Voorwaarden en Bepalingen
+
+mixin lp-footer-nav()
+	.footer-nav
+		ul.footer-nav__list
+			li.footer-nav__item.footer-nav__item--mobile: a(href='#{algemeneVoorwaardenLink}' target='_blank') Algemene voorwaarden
+			li.footer-nav__item.footer-nav__item--mobile: a(href='#{cookiesLink}') Cookies
+			li.footer-nav__item: a(href='#{leveringsVoorwaardenLink}' target='_blank') KPN Algemene Leveringsvoorwaarden
+			li.footer-nav__item: a(href='#{specifiekeVoorwaardenLink}' target='_blank') Specifieke Voorwaarden en Bepalingen
+
+mixin foto()
+	.main-visual.imgc: img(src="img/playing-soccer-24930629-760x545px.jpg")
+
+mixin hero-text()
+	.hero__text.hero__text--home
+		h1.hero__header Word met uw vestiging#[br.h-sm] ook een KPN WiFi HotSpot
+		h2.hero__subheader Gratis WiFi voor uw gasten, #[br.h-md]geen gedoe voor u
+
+mixin aanbod()
+	.aanbod
+		.aanbod__content
+			.aanbod__logo.imgc: img(src="img/kpn-logo-280x118px.png")
+			h3.aanbod__header Tijdelijk aanbod#[span.colon :]
+				img(src="../img/kpn-egg-ff9900-300x273px.png" width="100%")
+			ul.aanbod__list
+				li.aanbod__item.aanbod__item--1st.aanbod__item--xs Gratis apparatuur en installatie #[br.h-ls](ter waarde van &euro;&nbsp;600,-)
+				li.aanbod__item.aanbod__item--2nd.aanbod__item--xs Eerste halfjaar &euro; 25,- per maand #[br.h-ls](daarna &euro;&nbsp;50,- p.m.)
+				li.aanbod__item.aanbod__item--1st.aanbod__item--md Gratis apparatuur en installatie (t.w.v. &euro;&nbsp;600,-)
+				li.aanbod__item.aanbod__item--2nd.aanbod__item--md Eerste halfjaar &euro; 25,- per maand (i.p.v. &euro;&nbsp;50,-)
+
+
+mixin word-ook()
+	.info.info--word-ook
+		h3.info__header Word ook een#[br.h-sg.v-ts] KPN WiFi HotSpot
+		p.info__body We willen overal bereikbaar zijn, en bereikbaar blijven. Als KPN WiFi HotSpot biedt u uw bezoekers daarom snel, betrouwbaar en gratis draadloos internet via WiFi. Zo blijven ze langer, of komen ze sneller bij u terug.
+		a.info__cta.kpn-button(href="#{bestellenLink}") Bestellen
+
+mixin voordelen()
+	.info.info--voordelen
+		h3.info__header Voordelen voor#[br.h-i6.v-ts.h-sm] uw vestiging
+		ul.info__list
+			li.info__list__item Geen gedoe, KPN regelt alles
+			li.info__list__item Inlogpagina in uw huisstijl
+			li.info__list__item Advertentiemogelijkheden en statistieken
+			li.info__list__item Voldoet aan wettelijke eisen
+			li.info__list__item Meertalige helpdesk 24/7
+		a.info__cta.arrow-link(href="#{overLink}") Bekijk alle voordelen
+
+
+mixin risicos()
+	.info.info--risicos
+		h3.info__header Uw eigen WiFi openzetten?
+		p.info__body Het lijkt zo aantrekkelijk en eenvoudig: uw gasten toegang geven tot uw bestaande internetverbinding. Maar u neemt hiermee wel risico’s, die u voorkomt met KPN WiFi HotSpots. 
+		a.info__cta.arrow-link(href="#{risicosLink}") Ontdek risico’s eigen WiFi
+
+
+mixin locaties()
+	.home-locaties
+		h3.home-locaties__header Een greep uit de meer dan 4.000 KPN WiFi HotSpot locaties:
+		.home-locaties__logos
+			.row
+				.col-xs-12.col-ts-3.col-sm-2
+					.home-locaties__logo-box__outer
+						.home-locaties__logo-box
+							.home-locaties__logo.home-locaties__logo--albert-heijn.imgc: img(src="img/albert-heijn-logo-300x311px.png")
+				.col-xs-12.col-ts-3.col-sm-2
+					.home-locaties__logo-box__outer
+						.home-locaties__logo-box
+							.home-locaties__logo.home-locaties__logo--centerparcs.imgc: img(src="img/centerparcs-logo-300x238px.png")
+				.col-xs-12.col-ts-3.col-sm-2
+					.home-locaties__logo-box__outer
+						.home-locaties__logo-box
+							.home-locaties__logo.home-locaties__logo--ns.imgc: img(src="img/ns-logo-300x118px.png")
+				.col-xs-12.col-ts-3.col-sm-2
+					.home-locaties__logo-box__outer
+						.home-locaties__logo-box
+							.home-locaties__logo.home-locaties__logo--shell.imgc: img(src="img/shell-logo-201x240px.png")
+				.hidden-xs-ts.col-sm-2
+					.home-locaties__logo-box__outer
+						.home-locaties__logo-box
+							.home-locaties__logo.home-locaties__logo--healthcity.imgc: img(src="img/healthcity-logo-400x80px.png")
+				.hidden-xs-ts.col-sm-2
+					.home-locaties__logo-box__outer
+						.home-locaties__logo-box
+							.home-locaties__logo.home-locaties__logo--la-place.imgc: img(src="img/la-place-logo-300x281px.png")
+		a.home-locaties__cta.arrow-link(href="#{locatiesLink}") Bekijk alle KPN WiFi HotSpot locaties
+
+mixin locaties-sportverenigingen()
+	.home-locaties
+		h3.home-locaties__header Een greep uit de meer dan 4.000 KPN WiFi HotSpot locaties:
+		.home-locaties__logos
+			.row
+				.col-xs-12.col-ts-3.col-sm-2
+					.home-locaties__logo-box__outer
+						.home-locaties__logo-box
+							.home-locaties__logo.home-locaties__logo--excelsior.imgc: img(src="img/#{excelsiorLogo}")
+				.col-xs-12.col-ts-3.col-sm-2
+					.home-locaties__logo-box__outer
+						.home-locaties__logo-box
+							.home-locaties__logo.home-locaties__logo--blauw-wit.imgc: img(src="img/#{blauwWitLogo}")
+				.col-xs-12.col-ts-3.col-sm-2
+					.home-locaties__logo-box__outer
+						.home-locaties__logo-box
+							.home-locaties__logo.home-locaties__logo--quick-boys.imgc: img(src="img/#{quickBoysLogo}")
+				.col-xs-12.col-ts-3.col-sm-2
+					.home-locaties__logo-box__outer
+						.home-locaties__logo-box
+							.home-locaties__logo.home-locaties__logo--afc.imgc: img(src="img/#{afcLogo}")
+				.hidden-xs-ts.col-sm-2
+					.home-locaties__logo-box__outer
+						.home-locaties__logo-box
+							.home-locaties__logo.home-locaties__logo--zoetermeer.imgc: img(src="img/#{zoetermeerLogo}")
+				.hidden-xs-ts.col-sm-2
+					.home-locaties__logo-box__outer
+						.home-locaties__logo-box
+							.home-locaties__logo.home-locaties__logo--healthcity.imgc: img(src="img/#{healthCityLogo}")
+		a.home-locaties__cta.arrow-link(href="#{locatiesLink}") Bekijk alle KPN WiFi HotSpot locaties		
+
+mixin kpn-logo()
+	.kpn-logo.imgch
+		a(href="http://www.kpn.com/" target="_blank")
+			img(src="img/kpn-logo-diapositief-353x160px.png")

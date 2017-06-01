@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'KPN Accent';
+  src: url("../fonts/KPN-Accent-Light-WF.eot");
+  src: local("‚ò∫"), url("../fonts/KPN-Accent-Light-WF.woff") format("woff"), url("../fonts/KPN-Accent-Light-WF.ttf") format("truetype");
+  font-weight: $light;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KPN Accent';
+  src: url("../fonts/KPN-Accent-Normal-WF.eot");
+  src: local("‚ò∫"), url("../fonts/KPN-Accent-Normal-WF.woff") format("woff"), url("../fonts/KPN-Accent-Normal-WF.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KPN Accent';
+  src: url("../fonts/KPN-Accent-Bold-WF.eot");
+  src: local("‚ò∫"), url("../fonts/KPN-Accent-Bold-WF.woff") format("woff"), url("../fonts/KPN-Accent-Bold-WF.ttf") format("truetype");
+  font-weight: $bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KPN Sans';
+  src: url("../fonts/KPN-Sans-Light-WF.eot");
+  src: local("‚ò∫"), url("../fonts/KPN-Sans-Light-WF.woff") format("woff"), url("../fonts/KPN-Sans-Light-WF.ttf") format("truetype");
+  font-weight: $light;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KPN Sans';
+  src: url("../fonts/KPN-Sans-Normal-WF.eot");
+  src: local("‚ò∫"), url("../fonts/KPN-Sans-Normal-WF.woff") format("woff"), url("../fonts/KPN-Sans-Normal-WF.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'KPN Sans';
+  src: url("../fonts/KPN-Sans-Bold-WF.eot");
+  src: local("‚ò∫"), url("../fonts/KPN-Sans-Bold-WF.woff") format("woff"), url("../fonts/KPN-Sans-Bold-WF.ttf") format("truetype");
+  font-weight: $bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "KPN-Icons";
+  src: url("../fonts/KPN-Icons.eot");
+  src: url("../fonts/KPN-Icons.eot?#iefix") format("embedded-opentype"), url("../fonts/KPN-Icons.woff") format("woff"), url("../fonts/KPN-Icons.ttf") format("truetype"), url("../fonts/KPN-Icons.svg#KPN-Sans-Icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Web Symbols KPN Selection';
+  src:url('../fonts/websymbols-kpn-selection.eot?-23qms4');
+  src:url('../fonts/websymbols-kpn-selection.eot?-23qms4#iefix') format('embedded-opentype'),
+    url('../fonts/websymbols-kpn-selection.ttf?-23qms4') format('truetype'),
+    url('../fonts/websymbols-kpn-selection.woff?-23qms4') format('woff'),
+    url('../fonts/websymbols-kpn-selection.svg?-23qms4#websymbols-kpn-selection') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

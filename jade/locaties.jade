@@ -1,0 +1,39 @@
+extends default
+block head
+	- var devVersion = true
+	- var version = 1
+	- var pageTitle = 'Locaties'
+	- var bodyClass = 'locaties'
+block content
+	- var obj = {albertheijn: albertHeijnLogo, basicfit: basicFitLogo, shell: shellLogo, ns: nsLogo, centerparcs: centerParcsLogo, vandervalk: vanDerValkLogo, vu: vuLogo, karwei: karweiLogo, jumbo: jumboLogo, healthcity: healthCityLogo, texaco: texacoLogo, jaarbeursutrecht: jaarbeursUtrechtLogo, landal: landalLogo, fletcher: fletcherLogo, laplace: laPlaceLogo, gamma: gammaLogo, emte: emteLogo, delifrance: delifranceLogo, thesting: theStingLogo, tauro: tauroLogo, molecaten: molecatenLogo, carlton: carltonLogo, abrona: abronaLogo, sligro: sligroLogo, deen: deenLogo, laco: lacoLogo, carglass: carglassLogo, aristo: aristoLogo, roompot: roompotLogo, campanile: campanileLogo, unive: univeLogo, makro: makroLogo, coop: coopLogo, ac: acLogo, total: totalLogo, kroonenberg: kroonenbergLogo, amrath: amrathLogo, vluchtelingenwerk: vluchtelingenwerkLogo, kwikfit: kwikfitLogo, libema: libemaLogo}
+	include _masthead
+	.hero__outer
+		.hero__visual--mobile
+		.container
+			.row
+				.col-xs-12.col-sm-8.col-md-6
+					.hero
+						.hero__text
+							h1.hero__header Al meer dan 4000 KPN WiFi HotSpot locaties. Sluit u ook aan.
+	.logos__outer
+		.container
+			.row
+				.col-xs-12
+					.logos
+						h2.article__header.logos__header Een overzicht van enkele van onze partners:
+						.row
+							//-each val, i in [albertHeijnLogo, basicFitLogo, shellLogo, nsLogo, centerParcsLogo, vanDerValkLogo, vuLogo, karweiLogo, jumboLogo, healthCityLogo, texacoLogo, jaarbeursUtrechtLogo, landalLogo, fletcherLogo, laPlaceLogo, gammaLogo, emteLogo, delifranceLogo, theStingLogo, tauroLogo, molecatenLogo, carltonLogo, abronaLogo, sligroLogo, deenLogo, lacoLogo, carglassLogo, aristoLogo, roompotLogo, campanileLogo, univeLogo, makroLogo, coopLogo, acLogo, totalLogo, kroonenbergLogo, amrathLogo, vluchtelingenwerkLogo, kwikfitLogo, libemaLogo]
+								.col-xs-6.col-ts-4.col-sm-3.col-md-one-fifth(class="logo-col-"+(i + 1))
+									.logos__visual.imgc: img(src="img/#{val}")
+							each val, key in obj
+								.col-xs-6.col-ts-4.col-sm-3.col-md-one-fifth(class="logo-col--#{key}")
+									.logos__visual.imgc(class="logos__visual--#{key}"): img(src="img/#{val}")
+	.locatie-zoeker__outer
+		.container
+			.row
+				.col-xs-12
+					.locatie-zoeker
+						h2.article__header.locatie-zoeker__header Vind HotSpots bij u in de buurt:
+						.locatie-zoeker__visual.imgc: #[a(href="#{locatieZoekerLink}" target="_blank"): img(src='img/knp-wifi-hotspots-locaties-google-maps-screenshot-v2.jpg')]
+						a.kpn-button(href="#{locatieZoekerLink}" target="_blank") Vind een locatie
+	include _footer

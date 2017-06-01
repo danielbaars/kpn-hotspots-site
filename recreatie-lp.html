@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bied uw klanten extra service met snel, betrouwbaar en gratis draadloos internet met KPN WiFi Hotspots. Sluit u ook aan bij meer dan 4000 locaties.">
+    <meta name="author" content="KPN WiFi HotSpots">
+    <meta name="language" content="dutch">
+    <title>Recreatieparken | KPN WiFi HotSpots</title>
+    <link rel="shortcut icon" href="img/kpn_favicon.ico">
+    <link rel="stylesheet" href="css/app.css"><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+  </head>
+  <body class="lp recreatie-lp">
+    <div id="cookie_warning" class="hidden">
+      <style>
+        #cookie_warning {
+           position: fixed;
+           top: 0;
+           left: 0;
+           z-index: 99999999;
+        }
+        #KPN_cookie {
+           -moz-box-sizing: border-box;
+           -webkit-box-sizing: border-box;
+           box-sizing: border-box;
+           display: block;
+           position: fixed;
+           bottom: 0;
+           top: 0;
+           left: 0;
+           right: 0;
+           background: #000;
+           background: rgba(0, 0, 0, 0.6);
+           border: none;
+           margin: 0;
+           padding: 0px;
+           z-index: 99999999;
+        }
+        
+        #KPN_cookie a {
+           color: #337ab7;
+        }
+        
+        #KPN_cookie p {
+           line-height: 1.1em;
+           font-size: 13px;
+           padding: 8px 0;
+           margin: 0;
+        }
+        
+        #KPN_cookie_wrapper {
+           position: absolute;
+           top: 8px;
+           left: 8px;
+           right: 8px;
+           margin-left: 0px;
+           background-color: #fff;
+        }
+        
+        #KPN_cookie_wrapper:after {
+           content: "";
+           clear: both;
+           visibility: hidden;
+           font-size: 0;
+           height: 0;
+           display: block;
+        }
+        
+        #KPN_cookie_header {
+           position: relative;
+           overflow: hidden;
+           height: 42px;
+        }
+        
+        #KPN_cookie_header_image {
+           display: none;
+        }
+        
+        #KPN_cookie_header_logo {
+           position: absolute;
+           top: 12px;
+           left: 12px;
+           width: 60px;
+        }
+        
+        #KPN_cookie_content_wrapper {
+           padding: 0 10px 10px 10px;
+           line-height: 1.1em;
+        }
+        
+        #KPN_cookie_text {
+           text-align: left;
+           font-size: 13px;
+           float: left;
+           color: #666;
+        }
+        
+        #KPN_cookie_text_bottom {
+           clear: both;
+           font-size: 13px;
+        }
+        
+        #KPN_cookie_text_bottom:after {
+           content: "";
+           clear: both;
+           visibility: hidden;
+           font-size: 0;
+           height: 0;
+           display: block;
+        }
+        
+        .KPN_cookie_button {
+           color: #fff;
+           white-space: nowrap;
+           text-decoration: none;
+           float: none;
+           text-align: center;
+           z-index: 99;
+           padding: 10px 0px;
+           margin: 0;
+           width: 100%;
+           height: auto;
+           cursor: pointer;
+           background-color: #0099ff;
+           border-radius: 3px;
+        }
+        
+        .KPN_cookie_button:hover {
+           color: #fff;
+           background: #0077cc;
+        }
+        
+        #KPN_cookie_text_settings {
+           float: none;
+           margin-top: 8px;
+           width: 100%;
+        }
+        
+        /* Regular mobile */
+        @media screen and (min-width: 320px) {
+           #KPN_cookie_content_wrapper {
+              line-height: 1.35em;
+           }
+        
+           #KPN_cookie p {
+              line-height: 1.35em;
+           }
+        }
+        
+        /* Flipped mobile */
+        @media screen and (max-height: 440px) {
+           #KPN_cookie_text {
+              max-height: 120px;
+              overflow: hidden;
+              overflow-y: scroll;
+           }
+        
+           #KPN_cookie_image_trimmer {
+              max-height: 160px;
+              overflow: hidden;
+           }
+        }
+        
+        @media screen and (max-height: 400px) {
+           #KPN_cookie_text {
+              max-height: 75px;
+           }
+        }
+        
+        @media screen and (max-height: 340px) {
+           #KPN_cookie_text {
+              max-height: 55px;
+           }
+        }
+        
+        /* Tablet */
+        @media screen and (min-width: 480px) {
+           #KPN_cookie_content_wrapper {
+              padding: 20px;
+           }
+        
+           #KPN_cookie_wrapper {
+              top: 16px;
+              left: 16px;
+              right: 16px;
+              margin-left: 0px;
+           }
+        
+           #KPN_cookie_header_image {
+              display: block;
+              width: 100%;
+              /*margin-top: -10%;*/
+           }
+        
+           #KPN_cookie_header_logo {
+              display: none;
+           }
+        
+           #KPN_cookie_header {
+              height: auto;
+              max-height: 120px;
+           }
+        
+           .KPN_cookie_button {
+              float: left;
+              width: 30%;
+           }
+        
+           #KPN_cookie_text_settings {
+              margin-top: 0px;
+              float: right;
+              width: 67%;
+           }
+        }
+        
+        /* Desktop */
+        @media screen and (min-width: 720px) {
+           #KPN_cookie_wrapper {
+              width: 620px;
+              left: 50%;
+              margin-left: -310px;
+           }
+        
+           #KPN_cookie_header_image {
+              /*margin-top:-90px;*/
+           }
+        }
+        
+        @media screen and (min-width: 720px) and (min-height: 500px) {
+           #KPN_cookie_wrapper {
+              top: 5%;
+           }
+        }
+        
+        @media screen and (min-width: 720px) and (min-height: 580px) {
+           #KPN_cookie_header_image {
+              margin-top: 0px;
+           }
+        
+           #KPN_cookie_header {
+              overflow: visible;
+              max-height: none;
+           }
+        
+           #KPN_cookie_wrapper {
+              top: 15%;
+           }
+        }
+        
+        /* IE8 */
+        .ie8 #KPN_cookie_wrapper {
+           top: 10%
+        }
+        
+      </style>
+      <div id="KPN_cookie">
+        <div id="KPN_cookie_wrapper">
+          <div id="KPN_cookie_header"><img id="KPN_cookie_header_image" src="img/cookie-620x120.jpg" alt="KPN optimaliseert deze website met cookies"><img id="KPN_cookie_header_logo" src="img/kpn_logo.png" alt="logo"></div>
+          <div id="KPN_cookie_content_wrapper" class="newdesign">
+            <div id="KPN_cookie_text">
+              <p><b>KPN en haar merken zijn continu bezig met het verbeteren van onze dienstverlening om je beter en persoonlijker van dienst te kunnen zijn.</b></p>
+              <p>Wij gebruiken hiervoor cookies op onze websites. Daarnaast verzamelen wij via onze websites ook andere gegevens van je, zoals je IP-adres, clickgedrag en gegevens die je zelf bij ons achterlaat. Als je klant van ons bent dan combineren wij deze gegevens met de gegevens die wij van je hebben omdat je klant van ons bent. Met je akkoord verleen je toestemming voor het optimale gebruik van cookies en voor het analyseren en combineren van je gegevens.</p>
+            </div>
+            <div id="KPN_cookie_text_bottom">
+              <div class="KPN_cookie_button KPN_cookie_personal btn-blue">Cookies accepteren</div>
+              <div id="KPN_cookie_text_settings">Lees&nbsp;<a href="cookies.html" class="KPN_cookie_click">hier</a> meer over de cookies die wij plaatsen, over&nbsp;<a href="https://www.kpn.com/algemeen/missie-en-privacy-statement.htm">ons privacybeleid</a> en over hoe je&nbsp;<a href="https://www.kpn.com/algemeen/cookies.htm" class="KPN_cookie_click">je instellingen</a> kunt aanpassen.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__outer">
+      <div class="hero__home-visual-mobile imgc"><img src="img/160108-KPN-WiFi-HotSpots-Recreatie-LP-HEADER-VISUAL-SMARTPHONE-q50.jpg"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="hero">
+              <div class="row">
+                <div class="col-xs-12 col-sm-7 col-md-8">
+                  <div class="hero__text-box">
+                    <div class="hero__text hero__text--home">
+                      <h1 class="hero__header">Word met uw recreatiepark ook een KPN&nbsp;WiFi&nbsp;HotSpot</h1>
+                      <h2 class="hero__subheader">Bied uw gasten snel en betrouwbaar draadloos internet</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="hidden-xs-ts col-ts-8 col-ts-offset-2 col-sm-5 col-sm-offset-0 col-md-4">
+                  <div class="bel-mij-terug bel-mij-terug--desktop">
+                    <h3 class="bel-mij-terug__header">Ik wil meer informatie</h3>
+                    <p class="bel-mij-terug__body">We helpen u graag. Bel ons op <a href="tel:08000414" class="phone-number">0800 0414</a>. Of vul uw gegevens in, dan bellen we u binnen twee werkdagen terug.</p>
+                    <form data-tip="{ 'fields': [ 'name', 'company', 'phone_number', 'email', 'g-recaptcha-response', 'business-type' ], 'url': 'email/return_call.php', 'function': 'return_call' }" data-form="0" class="bel-mij-terug__form">
+                      <div class="form-group bel-mij-terug__naam">
+                        <label>Naam</label>
+                        <input type="text" placeholder="Naam" name="name" data-error="Vul uw naam in." required="required" class="form-control"/>
+                      </div>
+                      <div class="form-group bel-mij-terug__bedrijf">
+                        <label>Bedrijf</label>
+                        <input type="text" placeholder="Bedrijf" name="company" data-error="Vul de naam van uw bedrijf of vereniging in." required="required" class="form-control"/>
+                      </div>
+                      <div class="form-group bel-mij-terug__telefoon">
+                        <label>Telefoon</label>
+                        <input type="tel" placeholder="Telefoonnummer" name="phone_number" data-error="undefined" required="required" class="form-control"/>
+                      </div>
+                      <div class="form-group bel-mij-terug__email">
+                        <label>E-mail</label>
+                        <input type="email" placeholder="E-mailadres" name="email" data-error="Vul een geldig e-mailadres in." required="required" class="form-control"/>
+                      </div>
+                      <input type="hidden" name="g-recaptcha-response"/>
+                      <input type="hidden" name="business-type" value="recreatie"/>
+                      <button type="submit" class="bel-mij-terug__cta kpn-button">Bel mij terug</button>
+                      <div id="captchaModal" class="modal fade">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                              <h4 class="modal-title">Om veiligheidsredenen moeten wij verifieren dat u een mens bent:</h4>
+                            </div>
+                            <div class="modal-body">
+                              <div data-sitekey="6Lf1Hw8TAAAAACXJNVkD4xHpSLR7JzyytaouQY3J" data-callback="captcha_callback" class="g-recaptcha"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="aanbod__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="aanbod">
+              <div class="aanbod__content">
+                <div class="aanbod__logo imgc"><img src="img/kpn-logo-280x118px.png"></div>
+                <h3 class="aanbod__header">Tijdelijk aanbod<span class="colon">:</span><img src="img/kpn-egg-ff9900-300x273px.png" width="100%"></h3>
+                <ul class="aanbod__list">
+                  <li class="aanbod__item aanbod__item--1st">Gratis technisch haalbaarheidsonderzoek/site survey</li>
+                  <li class="aanbod__item aanbod__item--2nd">50% korting op apparatuur en installatie</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bel-mij-terug--mobile__outer hidden-sm-lg">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="bel-mij-terug bel-mij-terug--mobile">
+              <h3 class="bel-mij-terug__header">Ik wil meer informatie</h3>
+              <p class="bel-mij-terug__body">We helpen u graag. Bel ons op <a href="tel:08000414" class="phone-number">0800 0414</a>. Of vul uw gegevens in, dan bellen we u binnen twee werkdagen terug.</p>
+              <form data-tip="{ 'fields': [ 'name', 'company', 'phone_number', 'email', 'g-recaptcha-response', 'business-type' ], 'url': 'email/return_call.php', 'function': 'return_call' }" data-form="0" class="bel-mij-terug__form">
+                <div class="form-group bel-mij-terug__naam">
+                  <label>Naam</label>
+                  <input type="text" placeholder="Naam" name="name" data-error="Vul uw naam in." required="required" class="form-control"/>
+                </div>
+                <div class="form-group bel-mij-terug__bedrijf">
+                  <label>Bedrijf</label>
+                  <input type="text" placeholder="Bedrijf" name="company" data-error="Vul de naam van uw bedrijf of vereniging in." required="required" class="form-control"/>
+                </div>
+                <div class="form-group bel-mij-terug__telefoon">
+                  <label>Telefoon</label>
+                  <input type="tel" placeholder="Telefoonnummer" name="phone_number" data-error="undefined" required="required" class="form-control"/>
+                </div>
+                <div class="form-group bel-mij-terug__email">
+                  <label>E-mail</label>
+                  <input type="email" placeholder="E-mailadres" name="email" data-error="Vul een geldig e-mailadres in." required="required" class="form-control"/>
+                </div>
+                <input type="hidden" name="g-recaptcha-response"/>
+                <input type="hidden" name="business-type" value="recreatie"/>
+                <button type="submit" class="bel-mij-terug__cta kpn-button">Bel mij terug</button>
+                <div id="captchaModal" class="modal fade">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title">Om veiligheidsredenen moeten wij verifieren dat u een mens bent:</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div data-sitekey="6Lf1Hw8TAAAAACXJNVkD4xHpSLR7JzyytaouQY3J" data-callback="captcha_callback" class="g-recaptcha"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="info__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-ts-6 col-md-4">
+            <div class="info info--word-ook">
+              <h3 class="info__header">Word ook een<br class="h-sg v-ts"> KPN WiFi HotSpot</h3>
+              <p class="info__body">Een goede Internet voorziening is tegenwoordig niet meer weg te denken op een recreatiepark. Als KPN WiFi HotSpot biedt u uw bezoekers snel, betrouwbaar en draadloos internet.</p><a href="bestellen.html" class="info__cta kpn-button">Bestellen</a>
+            </div>
+          </div>
+          <div class="col-ts-6 col-md-4">
+            <div class="info info--voordelen">
+              <h3 class="info__header">Voordelen voor uw recreatiepark</h3>
+              <ul class="info__list">
+                <li class="info__list__item">Geen gedoe, KPN regelt alles</li>
+                <li class="info__list__item">Snel, veilig en betrouwbaar internet</li>
+                <li class="info__list__item">Kies uw eigen business model</li>
+                <li class="info__list__item">Meertalige helpdesk 24/7</li>
+                <li class="info__list__item">Adverteerruimte op inlogportal</li>
+              </ul><a href="over-kpn-wifi-hotspots.html" class="info__cta arrow-link">Bekijk alle voordelen</a>
+            </div>
+          </div>
+          <div class="col-ts-12 col-md-4">
+            <div class="info info--risicos">
+              <h3 class="info__header">Zelf internetprovider zijn?</h3>
+              <p class="info__body">Het lijkt zo aantrekkelijk en eenvoudig: zelf een netwerk aanschaffen en uw gasten toegang geven tot uw eigen internetverbinding. Maar u neemt hiermee wel risico’s, die u voorkomt met KPN WiFi HotSpots.</p><a href="risicos-eigen-wifi.html" class="info__cta arrow-link">Ontdek risico’s eigen WiFi</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="citaat__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="citaat__slider">
+              <script>
+                var quotes = [];
+                
+                function shuffle(o) {
+                	for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+                	return o;
+                }
+                
+                function quote(quoteClass, quoteText, quotePortrait, quoteName, quoteRole) {
+                
+                	var html = "";
+                
+                	html += "<div class=\"citaat citaat--"+quoteClass+"\">"
+                	html += "<div class=\"row\">"
+                	html += "<div class=\"col-xs-6 col-xs-offset-3 hidden-ls-lg\">"
+                	html += "<div class=\"citaat__portrait imgc\"><img src=\"img/"+quotePortrait+"\"></div>"
+                	html += "</div>"
+                	html += "<div class=\"col-xs-12 col-ls-8 col-ts-8\">"
+                	html += "<div class=\"citaat__text-box__outer\">"
+                	html += "<div class=\"citaat__text-box\">"
+                	html += "<div class=\"citaat__text\">"+quoteText+"</div>"
+                	html += "<div class=\"citaat__info citaat__info--xs\">"
+                	html += "<div class=\"citaat__name\">"+quoteName+"</div>"
+                	html += "<div class=\"citaat__role\">"+quoteRole+"</div>"
+                	html += "</div>"
+                	html += "</div>"
+                	html += "</div>"
+                	html += "</div>"
+                	html += "<div class=\"hidden-xs col-ls-4 col-ts-4\">"
+                	html += "<div class=\"citaat__portrait imgc\"><img src=\"img/"+quotePortrait+"\"></div>"
+                	html += "<div class=\"citaat__info-box__outer\">"
+                	html += "<div class=\"citaat__info-box\">"
+                	html += "<div class=\"citaat__info citaat__info--md\">"
+                	html += "<div class=\"citaat__name\">"+quoteName+"</div>"
+                	html += "<div class=\"citaat__role\">"+quoteRole+"</div>"
+                	html += "</div>"
+                	html += "</div>"
+                	html += "</div>"
+                	html += "</div>"
+                	html += "</div>"
+                	html += "</div>"
+                
+                	quotes.push(html);
+                
+                }
+                
+                quote('rakken', 'Klanten vinden een goede WiFi verbinding op de camping en in de haven net zo belangrijk en vanzelfsprekend als goede sanitaire voorzieningen. KPN Hotspots vult de behoefte van onze gasten op een uitstekende manier in.', 'circle-otto-spoelstra.jpg', 'Otto Spoelstra', 'Directeur Aquacamping en Jachthaven De Rakken');
+                quote('pierre-et-vacances', 'Op Camping Port Zelande bieden we geheel ontzorgd, onze kampeerders, door middel van het betrouwbare netwerk van KPN HotSpots, een goede WiFi oplossing.', 'circle-john-broekhuizen.jpg', 'John Broekhuizen', 'ICT Project & Process Manager Groupe Pierre & Vacances / Center Parcs');
+                //quote('paal', 'Gasten verlangen dat er op onze camping een goede WiFi dienst wordt aangeboden. Met KPN HotSpots bieden we onze gasten snel WiFi op ons recreatiepark.', 'circle-eric-jan-brummelhuis.jpg', 'Naam nog Onbekend', 'Functienaam Camping de Paal');
+                quote('dierenbos', 'WiFi is onmisbaar voor gasten op de Libéma-vakantieparken Dierenbos en Beekse Bergen. In bijvoorbeeld de bungalows, maar zeker ook op de kampeervelden. Met WiFi Hotspots van KPN wordt vakantie vieren nóg leuker.', 'circle-marleen-van-eerd.jpg', 'Marleen van Eerd', 'Management assistente Beekse Bergen en Dierenbos');
+                quote('koornmolen', 'Onze gasten waarderen het betrouwbare WiFi netwerk van KPN op onze camping. Via social media kunnen onze gasten hun vakantiebelevenissen direct delen met familie en vrienden.', 'circle-vanessa-vos.jpg', 'Vanessa Vos', 'Parkmanager Camping de Koornmolen');
+                
+                quotes = shuffle(quotes);
+                
+                for(var i = 0; i < quotes.length; i++) {
+                	document.write(quotes[i]);
+                }
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="home-locaties__outer hidden-xs-ls">
+      <div class="container">
+        <div class="row">
+          <div class="col-ts-12">
+            <div class="home-locaties">
+              <h3 class="home-locaties__header">Een greep uit de meer dan 4.000 KPN WiFi HotSpot locaties:</h3>
+              <div class="home-locaties__logos">
+                <div class="row">
+                  <div class="col-xs-12 col-ts-3 col-md-2">
+                    <div class="home-locaties__logo-box__outer">
+                      <div class="home-locaties__logo-box">
+                        <div class="home-locaties__logo home-locaties__logo--landal imgc"><img src="img/Landal-Greenparks-Logo-300x298px.png"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-ts-3 col-md-2">
+                    <div class="home-locaties__logo-box__outer">
+                      <div class="home-locaties__logo-box">
+                        <div class="home-locaties__logo home-locaties__logo--centerparcs imgc"><img src="img/center-parcs-logo-200x157px.jpg"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-ts-3 col-md-2">
+                    <div class="home-locaties__logo-box__outer">
+                      <div class="home-locaties__logo-box">
+                        <div class="home-locaties__logo home-locaties__logo--kuilart imgc"><img src="img/de-kuilart-logo-275x100px.png"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-ts-3 col-md-2">
+                    <div class="home-locaties__logo-box__outer">
+                      <div class="home-locaties__logo-box">
+                        <div class="home-locaties__logo home-locaties__logo--meerwijck imgc"><img src="img/meerwijck-logo-183x127px.png"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hidden-xs-sm col-md-2">
+                    <div class="home-locaties__logo-box__outer">
+                      <div class="home-locaties__logo-box">
+                        <div class="home-locaties__logo home-locaties__logo--beekse-bergen imgc"><img src="img/vakantiepark-beekse-bergen-logo-211x100px.png"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hidden-xs-sm col-md-2">
+                    <div class="home-locaties__logo-box__outer">
+                      <div class="home-locaties__logo-box">
+                        <div class="home-locaties__logo home-locaties__logo--verkrema imgc"><img src="img/verkrema-logo-221x149px.png"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><a href="locaties.html" class="home-locaties__cta arrow-link">Bekijk alle KPN WiFi HotSpot locaties</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="prefooter__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="prefooter">
+              <div class="row">
+                <div class="col-xs-12 col-ts-3 col-md-2">
+                  <div class="kpn-logo imgch"><a href="http://www.kpn.com/" target="_blank"><img src="img/kpn-logo-diapositief-353x160px.png"/></a></div>
+                </div>
+                <div class="hidden-xs-ls col-ts-9 col-md-10">
+                  <div class="secondary-nav">
+                    <ul class="secondary-nav__list">
+                      <li class="secondary-nav__item"><a href="cookies.html">Cookies</a></li>
+                      <li class="secondary-nav__item"><a href="algemene-voorwaarden.html" target="_blank">Algemene voorwaarden</a></li>
+                      <li class="secondary-nav__item h-ts v-md-ib"><a href="pdf/KPN-Algemene-Leveringsvoorwaarden-Nederlands.pdf" target="_blank">KPN Algemene Leveringsvoorwaarden</a></li>
+                      <li class="secondary-nav__item h-ts v-md-ib"><a href="pdf/KPN-Specifieke-Contractvoorwaarden-En-Bepalingen-Online.pdf" target="_blank">Specifieke Voorwaarden en Bepalingen</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__outer hidden-md">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="footer">
+              <div class="footer-nav">
+                <ul class="footer-nav__list">
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="algemene-voorwaarden.html" target="_blank">Algemene voorwaarden</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="cookies.html">Cookies</a></li>
+                  <li class="footer-nav__item"><a href="pdf/KPN-Algemene-Leveringsvoorwaarden-Nederlands.pdf" target="_blank">KPN Algemene Leveringsvoorwaarden</a></li>
+                  <li class="footer-nav__item"><a href="pdf/KPN-Specifieke-Contractvoorwaarden-En-Bepalingen-Online.pdf" target="_blank">Specifieke Voorwaarden en Bepalingen</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/bootstrap-modals.min.js"></script>
+  <script src="js/neo.min.js"></script>
+  <script src="js/cookie_warning.js"></script>
+  <script src="js/contactform.js"></script>
+  <script src="js/quotes.js"></script>
+  <script src="js/placeholder.js"></script>
+</html>

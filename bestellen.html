@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bied uw klanten extra service met snel, betrouwbaar en gratis draadloos internet met KPN WiFi Hotspots. Sluit u ook aan bij meer dan 4000 locaties.">
+    <meta name="author" content="KPN WiFi HotSpots">
+    <meta name="language" content="dutch">
+    <title>Bestellen | KPN WiFi HotSpots</title>
+    <link rel="shortcut icon" href="img/kpn_favicon.ico">
+    <link rel="stylesheet" href="css/app.css"><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+  </head>
+  <body class="bestellen">
+    <div id="cookie_warning" class="hidden">
+      <style>
+        #cookie_warning {
+           position: fixed;
+           top: 0;
+           left: 0;
+           z-index: 99999999;
+        }
+        #KPN_cookie {
+           -moz-box-sizing: border-box;
+           -webkit-box-sizing: border-box;
+           box-sizing: border-box;
+           display: block;
+           position: fixed;
+           bottom: 0;
+           top: 0;
+           left: 0;
+           right: 0;
+           background: #000;
+           background: rgba(0, 0, 0, 0.6);
+           border: none;
+           margin: 0;
+           padding: 0px;
+           z-index: 99999999;
+        }
+        
+        #KPN_cookie a {
+           color: #337ab7;
+        }
+        
+        #KPN_cookie p {
+           line-height: 1.1em;
+           font-size: 13px;
+           padding: 8px 0;
+           margin: 0;
+        }
+        
+        #KPN_cookie_wrapper {
+           position: absolute;
+           top: 8px;
+           left: 8px;
+           right: 8px;
+           margin-left: 0px;
+           background-color: #fff;
+        }
+        
+        #KPN_cookie_wrapper:after {
+           content: "";
+           clear: both;
+           visibility: hidden;
+           font-size: 0;
+           height: 0;
+           display: block;
+        }
+        
+        #KPN_cookie_header {
+           position: relative;
+           overflow: hidden;
+           height: 42px;
+        }
+        
+        #KPN_cookie_header_image {
+           display: none;
+        }
+        
+        #KPN_cookie_header_logo {
+           position: absolute;
+           top: 12px;
+           left: 12px;
+           width: 60px;
+        }
+        
+        #KPN_cookie_content_wrapper {
+           padding: 0 10px 10px 10px;
+           line-height: 1.1em;
+        }
+        
+        #KPN_cookie_text {
+           text-align: left;
+           font-size: 13px;
+           float: left;
+           color: #666;
+        }
+        
+        #KPN_cookie_text_bottom {
+           clear: both;
+           font-size: 13px;
+        }
+        
+        #KPN_cookie_text_bottom:after {
+           content: "";
+           clear: both;
+           visibility: hidden;
+           font-size: 0;
+           height: 0;
+           display: block;
+        }
+        
+        .KPN_cookie_button {
+           color: #fff;
+           white-space: nowrap;
+           text-decoration: none;
+           float: none;
+           text-align: center;
+           z-index: 99;
+           padding: 10px 0px;
+           margin: 0;
+           width: 100%;
+           height: auto;
+           cursor: pointer;
+           background-color: #0099ff;
+           border-radius: 3px;
+        }
+        
+        .KPN_cookie_button:hover {
+           color: #fff;
+           background: #0077cc;
+        }
+        
+        #KPN_cookie_text_settings {
+           float: none;
+           margin-top: 8px;
+           width: 100%;
+        }
+        
+        /* Regular mobile */
+        @media screen and (min-width: 320px) {
+           #KPN_cookie_content_wrapper {
+              line-height: 1.35em;
+           }
+        
+           #KPN_cookie p {
+              line-height: 1.35em;
+           }
+        }
+        
+        /* Flipped mobile */
+        @media screen and (max-height: 440px) {
+           #KPN_cookie_text {
+              max-height: 120px;
+              overflow: hidden;
+              overflow-y: scroll;
+           }
+        
+           #KPN_cookie_image_trimmer {
+              max-height: 160px;
+              overflow: hidden;
+           }
+        }
+        
+        @media screen and (max-height: 400px) {
+           #KPN_cookie_text {
+              max-height: 75px;
+           }
+        }
+        
+        @media screen and (max-height: 340px) {
+           #KPN_cookie_text {
+              max-height: 55px;
+           }
+        }
+        
+        /* Tablet */
+        @media screen and (min-width: 480px) {
+           #KPN_cookie_content_wrapper {
+              padding: 20px;
+           }
+        
+           #KPN_cookie_wrapper {
+              top: 16px;
+              left: 16px;
+              right: 16px;
+              margin-left: 0px;
+           }
+        
+           #KPN_cookie_header_image {
+              display: block;
+              width: 100%;
+              /*margin-top: -10%;*/
+           }
+        
+           #KPN_cookie_header_logo {
+              display: none;
+           }
+        
+           #KPN_cookie_header {
+              height: auto;
+              max-height: 120px;
+           }
+        
+           .KPN_cookie_button {
+              float: left;
+              width: 30%;
+           }
+        
+           #KPN_cookie_text_settings {
+              margin-top: 0px;
+              float: right;
+              width: 67%;
+           }
+        }
+        
+        /* Desktop */
+        @media screen and (min-width: 720px) {
+           #KPN_cookie_wrapper {
+              width: 620px;
+              left: 50%;
+              margin-left: -310px;
+           }
+        
+           #KPN_cookie_header_image {
+              /*margin-top:-90px;*/
+           }
+        }
+        
+        @media screen and (min-width: 720px) and (min-height: 500px) {
+           #KPN_cookie_wrapper {
+              top: 5%;
+           }
+        }
+        
+        @media screen and (min-width: 720px) and (min-height: 580px) {
+           #KPN_cookie_header_image {
+              margin-top: 0px;
+           }
+        
+           #KPN_cookie_header {
+              overflow: visible;
+              max-height: none;
+           }
+        
+           #KPN_cookie_wrapper {
+              top: 15%;
+           }
+        }
+        
+        /* IE8 */
+        .ie8 #KPN_cookie_wrapper {
+           top: 10%
+        }
+        
+      </style>
+      <div id="KPN_cookie">
+        <div id="KPN_cookie_wrapper">
+          <div id="KPN_cookie_header"><img id="KPN_cookie_header_image" src="img/cookie-620x120.jpg" alt="KPN optimaliseert deze website met cookies"><img id="KPN_cookie_header_logo" src="img/kpn_logo.png" alt="logo"></div>
+          <div id="KPN_cookie_content_wrapper" class="newdesign">
+            <div id="KPN_cookie_text">
+              <p><b>KPN en haar merken zijn continu bezig met het verbeteren van onze dienstverlening om je beter en persoonlijker van dienst te kunnen zijn.</b></p>
+              <p>Wij gebruiken hiervoor cookies op onze websites. Daarnaast verzamelen wij via onze websites ook andere gegevens van je, zoals je IP-adres, clickgedrag en gegevens die je zelf bij ons achterlaat. Als je klant van ons bent dan combineren wij deze gegevens met de gegevens die wij van je hebben omdat je klant van ons bent. Met je akkoord verleen je toestemming voor het optimale gebruik van cookies en voor het analyseren en combineren van je gegevens.</p>
+            </div>
+            <div id="KPN_cookie_text_bottom">
+              <div class="KPN_cookie_button KPN_cookie_personal btn-blue">Cookies accepteren</div>
+              <div id="KPN_cookie_text_settings">Lees&nbsp;<a href="cookies.html" class="KPN_cookie_click">hier</a> meer over de cookies die wij plaatsen, over&nbsp;<a href="https://www.kpn.com/algemeen/missie-en-privacy-statement.htm">ons privacybeleid</a> en over hoe je&nbsp;<a href="https://www.kpn.com/algemeen/cookies.htm" class="KPN_cookie_click">je instellingen</a> kunt aanpassen.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="masthead__outer">
+      <div class="container">
+        <div class="masthead">
+          <div class="row">
+            <div class="col-xs-12 col-sm-4">
+              <div class="masthead__branding__container"><a href="/" class="masthead__branding">
+                  <div class="masthead__logo imgch"><img src="img/kpn-logo-280x118px.png"/></div>
+                  <h1 class="masthead__site-title">KPN WiFi HotSpots</h1></a></div>
+            </div>
+            <div class="hidden-xs-ts col-sm-8">
+              <div class="main-nav">
+                <ul class="main-nav__list">
+                  <li class="main-nav__item"><a href="over-kpn-wifi-hotspots.html">Over KPN WiFi HotSpots</a></li>
+                  <li class="main-nav__item"><a href="service-en-contact.html">Service<span class="extra">&nbsp;& Contact</span></a></li>
+                  <li class="main-nav__item"><a href="bestellen.html">Bestellen</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__outer">
+      <div class="hero__visual--mobile"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-6">
+            <div class="hero">
+              <div class="hero__text">
+                <h1 class="hero__header">In 4 tot 6 weken bent u een KPN WiFi Hotspot</h1>
+                <p class="hero__intro">Fijn dat u kiest voor KPN WiFi HotSpots! Vult u onderstaand formulier in, dan kunnen uw gasten binnenkort zorgeloos draadloos internetten.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bon__outer">
+      <div class="container">
+        <div class="row">
+          <div id="bekijk" class="col-xs-12 hidden-ts-lg">
+            <div class="bekijk-uw-bestelling">Bekijk uw bestelling</div>
+            <div class="keuze keuze--xs">
+              <h3 class="keuze__header">Uw bestelling</h3>
+              <ul class="keuze__list">
+                <li class="keuze__list__item">1 KPN WiFi HotSpot access point</li>
+                <li class="keuze__list__item">Contractduur: 36&nbsp;maanden</li>
+                <li class="keuze__list__item">Maandelijkse kosten: €&nbsp;50,- excl. BTW</li>
+              </ul>
+              <h3 class="keuze__header">Uw korting</h3>
+              <ul class="keuze__list">
+                <li class="keuze__list__item"><strong>Gratis apparatuur en installatie</strong> (normaal €&nbsp;600,&#8209;)</li>
+                <li class="keuze__list__item"><strong>Eerste zes maanden 50%&nbsp;korting</strong> op maandelijkse kosten</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="article__outer">
+      <div class="container">
+        <div class="article">
+          <div class="row">
+            <div class="col-xs-12 col-ts-7 col-ts-xpr">
+              <form id="order_form" method="post" action="order/order.php" class="bestelform">
+                <h3 class="bestelform__header">Contactgegevens</h3>
+                <div class="form-group bestelform__bedrijf">
+                  <label class="bestelform__subheader">Bedrijfsnaam</label>
+                  <input type="text" placeholder="" name="company" data-error="Vul de naam van uw bedrijf of vereniging in." required class="form-control">
+                  <div class="checked-sign"></div>
+                </div>
+                <div class="form-group bestelform__aanhef">
+                  <label class="bestelform__subheader">Aanhef</label>
+                  <label class="radio-inline">
+                    <input type="radio" name="gender" value="dhr" checked><span class="checkbox-value">Dhr.</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="gender" value="mevr"><span class="checkbox-value">Mevr.</span>								
+                  </label>
+                </div>
+                <div class="form-group bestelform__voornaam">
+                  <label class="bestelform__subheader">Voornaam</label>
+                  <input type="text" placeholder="" name="first_name" data-error="Vul uw voornaam in." required class="form-control">
+                  <div class="checked-sign"></div>
+                </div>
+                <div class="form-group bestelform__achternaam">
+                  <label class="bestelform__subheader">Achternaam</label>
+                  <input type="text" placeholder="" name="last_name" data-error="Vul uw achternaam in." required class="form-control">
+                  <div class="checked-sign"></div>
+                </div>
+                <div class="form-group bestelform__postcode">
+                  <label class="bestelform__subheader">Postcode</label><input name="postal_code" type="text" maxlength="7" data-required="open" pattern="^(\d)(\d)(\d)(\d)(\s?)([a-zA-Z])([a-zA-Z])$" class="form-control no-required-check" data-address='adres' data-house="house_number" data-error="Vul uw postcode in." required="required">
+                  <div class="checked-sign"></div>
+                </div>
+                <div class="form-group bestelform__adres">
+                  <label class="bestelform__subheader">Huisnummer</label>
+                  <div class="row">
+                    <div class="col-xs-7 col-ts-6">
+                      <input type="text" placeholder="Nr." pattern="^[0-9]+$" name="house_number" id="house_number" data-error="Vul uw huisnummer in." required class="form-control no-required-check">
+                      <div class="checked-sign"></div>
+                    </div>
+                    <div class="col-xs-5 col-ts-6">
+                      <input type="text" placeholder="Toev." pattern="^[a-zA-Z0-9]*$" data-error="Vul een geldige huisnummertoevoeging in." name="number_suffix" optional class="form-control">
+                      <div class="checked-sign"></div>
+                    </div>
+                  </div>
+                  <div class="row hidden warning-message"><br>
+                    <div class="col-lg-12">
+                      <p>We konden uw combinatie van postcode en huisnummer niet vinden. Klopt deze wél? Ga dan verder.</p>
+                    </div>
+                  </div>
+                </div>
+                <div id="adres" data-tip="{ 'street': 'street', 'city': 'city' }" class="form-group bestelform__huisnummer hidden">
+                  <label class="bestelform__subheader">Adres</label>
+                  <div class="row">
+                    <div class="col-xs-7 col-ts-6">
+                      <input type="text" placeholder="Straat" name="street" disabled class="form-control">
+                    </div>
+                    <div class="col-xs-5 col-ts-6">
+                      <input type="text" placeholder="Stad" name="city" disabled class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group bestelform__email">
+                  <label class="bestelform__subheader">E-mailadres</label>
+                  <input type="email" placeholder="" name="email" data-error="Vul een geldig e-mailadres in." required class="form-control">
+                  <div class="checked-sign"></div>
+                </div>
+                <div class="form-group bestelform__telefoon">
+                  <label class="bestelform__subheader">Telefoonnummer</label>
+                  <input type="tel" placeholder="" name="phone_number" data-error="Vul een geldig e-mailadres in." required class="form-control">
+                  <div class="checked-sign"></div>
+                </div>
+                <h3 class="bestelform__header">Factuurgegevens		</h3>
+                <div class="form-group bestelform__afwijkende-factuurgegevens-checkbox">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="" name="factuur" id="factuur_check"><span class="checkbox-value">Het factuuradres wijkt af van het bovenstaande afleveradres</span>
+                    </label>
+                  </div>
+                </div>
+                <div id="factuur_form" class="bestelform__afwijkende-factuurgegevens">
+                  <div class="form-group bestelform__postcode bestelform__postcode-factuur">
+                    <label class="bestelform__subheader">Postcode									</label><input name="postal_code_invoice" type="text" maxlength="7" data-required="open" pattern="^(\d)(\d)(\d)(\d)(\s?)([a-zA-Z])([a-zA-Z])$" data-error="Vul uw postcode in." class="form-control no-required-check" data-address='adres_invoice' data-house="house_number_invoice">
+                    <div class="checked-sign"></div>
+                  </div>
+                  <div class="form-group bestelform__huisnummer-factuur">
+                    <label class="bestelform__subheader">Huisnummer</label>
+                    <div class="row">
+                      <div class="col-xs-7 col-ts-6">
+                        <input type="text" placeholder="Nr." pattern="^[0-9]+$" data-error="Vul uw huisnummer in." name="house_number_invoice" id="house_number_invoice" data-required class="form-control no-required-check">
+                        <div class="checked-sign"></div>
+                      </div>
+                      <div class="col-xs-5 col-ts-6">
+                        <input type="text" placeholder="Toev." pattern="^[a-zA-Z0-9]*$" data-error="Vul een geldige huisnummertoevoeging in." name="number_suffix_invoice" optional class="form-control">
+                        <div class="checked-sign"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="adres_invoice" data-tip="{ 'street': 'street_invoice', 'city': 'city_invoice' }" class="form-group bestelform__huisnummer hidden">
+                    <label class="bestelform__subheader">Adres</label>
+                    <div class="row">
+                      <div class="col-xs-7 col-ts-6">
+                        <input type="text" placeholder="Straat" name="street_invoice" disabled class="form-control">
+                      </div>
+                      <div class="col-xs-5 col-ts-6">
+                        <input type="text" placeholder="Stad" name="city_invoice" disabled class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group bestelform__ter-attentie-van">
+                    <label class="bestelform__subheader">T.a.v.</label>
+                    <input type="text" placeholder="" name="attn" optional class="form-control">
+                    <div class="checked-sign"></div>
+                  </div>
+                  <div class="form-group bestelform__email-factuur">
+                    <label class="bestelform__subheader">E-mailadres</label>
+                    <input type="email" placeholder="" name="email_invoice" data-error="Vul een geldig e-mailadres in." data-required class="form-control">
+                    <div class="checked-sign"></div>
+                  </div>
+                  <div class="form-group bestelform__referentie">
+                    <label class="bestelform__subheader">Referentie</label>
+                    <input type="text" placeholder="" name="reference" optional class="form-control">
+                    <div class="checked-sign"></div>
+                    <div class="bestelform__beschrijving">Een kenmerk dat u op uw factuur terug wilt zien.</div>
+                  </div>
+                </div>
+                <div class="form-group bestelform__verzendwijze-factuur">
+                  <label class="bestelform__subheader">Verzendwijze factuur</label>
+                  <label class="radio-inline">
+                    <input type="radio" name="invoice_digital_or_printed" value="email" checked><span class="checkbox-value h-ls v-ts h-sm">Per e-mail</span><span class="checkbox-value h-xs v-ls h-ts v-sm">Factuur per e-mail</span>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="invoice_digital_or_printed" value="print"><span class="checkbox-value h-ls v-ts h-sm">Per post</span><span class="checkbox-value h-xs v-ls h-ts v-sm">Factuur per post</span>
+                  </label>
+                </div>
+                <div class="form-group bestelform__iban">
+                  <label class="bestelform__subheader">IBAN</label><input class="form-control" name="iban" type="text" pattern="/(?i)(^AL\d{10}[0-9A-Z]{16}$|^AD\d{10}[0-9A-Z]{12}$|^AT\d{18}$|^BH\d{2}[A-Z]{4}[0-9A-Z]{14}$|^BE\d{14}$|^BA\d{18}$|^BG\d{2}[A-Z]{4}\d{6}[0-9A-Z]{8}$|^HR\d{19}$|^CY\d{10}[0-9A-Z]{16}$|^CZ\d{22}$|^DK\d{16}$|^FO\d{16}$|^GL\d{16}$|^DO\d{2}[0-9A-Z]{4}\d{20}$|^EE\d{18}$|^FI\d{16}$|^FR\d{12}[0-9A-Z]{11}\d{2}$|^GE\d{2}[A-Z]{2}\d{16}$|^DE\d{20}$|^GI\d{2}[A-Z]{4}[0-9A-Z]{15}$|^GR\d{9}[0-9A-Z]{16}$|^HU\d{26}$|^IS\d{24}$|^IE\d{2}[A-Z]{4}\d{14}$|^IL\d{21}$|^IT\d{2}[A-Z]\d{10}[0-9A-Z]{12}$|^[A-Z]{2}\d{5}[0-9A-Z]{13}$|^KW\d{2}[A-Z]{4}22!$|^LV\d{2}[A-Z]{4}[0-9A-Z]{13}$|^LB\d{6}[0-9A-Z]{20}$|^LI\d{7}[0-9A-Z]{12}$|^LT\d{18}$|^LU\d{5}[0-9A-Z]{13}$|^MK\d{5}[0-9A-Z]{10}\d{2}$|^MT\d{2}[A-Z]{4}\d{5}[0-9A-Z]{18}$|^MR13\d{23}$|^MU\d{2}[A-Z]{4}\d{19}[A-Z]{3}$|^MC\d{12}[0-9A-Z]{11}\d{2}$|^ME\d{20}$|^NL\d{2}[A-Z]{4}\d{10}$|^NO\d{13}$|^PL\d{10}[0-9A-Z]{,16}n$|^PT\d{23}$|^RO\d{2}[A-Z]{4}[0-9A-Z]{16}$|^SM\d{2}[A-Z]\d{10}[0-9A-Z]{12}$|^SA\d{4}[0-9A-Z]{18}$|^RS\d{20}$|^SK\d{22}$|^SI\d{17}$|^ES\d{22}$|^SE\d{22}$|^CH\d{7}[0-9A-Z]{12}$|^TN59\d{20}$|^TR\d{7}[0-9A-Z]{17}$|^AE\d{21}$|^GB\d{2}[A-Z]{4}\d{14}$)/i" data-error="Vul een geldig IBAN-nummer in (bijvoorbeeld NL39RABO0300065264)." required />
+                  <div class="checked-sign"></div>
+                </div>
+                <h3 class="bestelform__header">Akkoordverklaring</h3>
+                <div class="form-group bestelform__akkoordverklaring">
+                  <input name="agreement" type="checkbox" value="true" data-error="Om dit formulier te kunnen versturen moet u akkoord gaan." required>
+                  <div class="bestelform__akkoordverklaring__tekst">Ik ga akkoord met de <a href="algemene-voorwaarden.html" target="_blank">Algemene Voorwaarden KPN WiFi HotSpots</a>, de <a href="pdf/KPN-Algemene-Leveringsvoorwaarden-Nederlands.pdf" target="_blank">Algemene Leverings&shy;voorwaarden KPN</a>, <a href="pdf/KPN-WiFi-Dienstbeschrijving.pdf" target="_blank">KPN WiFi Dienstbeschrijving</a> en de <a href="pdf/KPN-Specifieke-Contractvoorwaarden-En-Bepalingen-Online.pdf" target="_blank">Specifieke contractvoorwaarden en bepalingen</a>.*</div>
+                  <div class="bestelform__beschrijving"><span class="asterisk">*</span> De overeenkomst gaat in op het moment van verzending. De looptijd zal aanvangen bij oplevering van de dienst.</div>
+                </div>
+                <button type="submit" class="bestelform__cta kpn-button">Bestellen</button>
+                <input type="hidden" name="g-recaptcha-response">
+                <div id="captchaModal" class="modal fade">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title">Om veiligheidsredenen moeten wij verifieren dat u een mens bent:</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div data-sitekey="6Lf1Hw8TAAAAACXJNVkD4xHpSLR7JzyytaouQY3J" data-callback="captcha_callback" class="g-recaptcha"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="hidden-xs-ls col-ts-5 col-ts-xpl">
+              <div class="keuze keuze--undefined">
+                <h3 class="keuze__header">Uw bestelling</h3>
+                <ul class="keuze__list">
+                  <li class="keuze__list__item">1 KPN WiFi HotSpot access point</li>
+                  <li class="keuze__list__item">Contractduur: 36&nbsp;maanden</li>
+                  <li class="keuze__list__item">Maandelijkse kosten: €&nbsp;50,- excl. BTW</li>
+                </ul>
+                <h3 class="keuze__header">Uw korting</h3>
+                <ul class="keuze__list">
+                  <li class="keuze__list__item"><strong>Gratis apparatuur en installatie</strong> (normaal €&nbsp;600,&#8209;)</li>
+                  <li class="keuze__list__item"><strong>Eerste zes maanden 50%&nbsp;korting</strong> op maandelijkse kosten</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="prefooter__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="prefooter">
+              <div class="row">
+                <div class="col-xs-12 col-ts-3">
+                  <div class="kpn-logo imgch"><a href="http://www.kpn.com/" target="_blank"><img src="img/kpn-logo-diapositief-353x160px.png"/></a></div>
+                </div>
+                <div class="hidden-xs-ls col-ts-9">
+                  <div class="secondary-nav">
+                    <ul class="secondary-nav__list">
+                      <li class="secondary-nav__item secondary-nav__item--service"><a href="service-en-contact.html"><span class="h-ts v-sm">Service & Contact</span><span class="h-xs v-ts h-sm">Service</span></a></li>
+                      <li class="secondary-nav__item"><a href="pdf/KPN-WiFi-Handleiding.pdf" target="_blank">Handleiding</a></li>
+                      <li class="secondary-nav__item"><a href="pdf/KPN-WiFi-Dienstbeschrijving.pdf" target="_blank">Dienstbeschrijving</a></li>
+                      <li class="secondary-nav__item"><a href="locaties.html"><span class="h-ts v-sm">KPN WiFi HotSpot locaties</span><span class="h-xs v-ts h-sm">Locaties</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="footer">
+              <div class="footer-nav">
+                <ul class="footer-nav__list">
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="over-kpn-wifi-hotspots.html">Over KPN WiFi HotSpots</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="service-en-contact.html">Service & Contact</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="bestellen.html">Bestellen</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="pdf/KPN-WiFi-Handleiding.pdf" target="_blank">Handleiding</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="pdf/KPN-WiFi-Dienstbeschrijving.pdf" target="_blank">Dienstbeschrijving</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="locaties.html">KPN WiFi HotSpot locaties</a></li>
+                  <li class="footer-nav__item"><a href="algemene-voorwaarden.html" target="_blank">Algemene voorwaarden</a></li>
+                  <li class="footer-nav__item"><a href="cookies.html">Cookies</a></li>
+                  <li class="footer-nav__item"><a href="pdf/KPN-Algemene-Leveringsvoorwaarden-Nederlands.pdf" target="_blank">KPN Algemene Leveringsvoorwaarden</a></li>
+                  <li class="footer-nav__item"><a href="pdf/KPN-Specifieke-Contractvoorwaarden-En-Bepalingen-Online.pdf" target="_blank">Specifieke Voorwaarden en Bepalingen</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/bootstrap-modals.min.js"></script>
+  <script src="js/neo.min.js"></script>
+  <script src="js/cookie_warning.js"></script>
+  <script src="js/contactform.js"></script>
+</html>

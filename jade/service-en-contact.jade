@@ -1,0 +1,73 @@
+extends default
+block head
+	- var devVersion = true
+	- var version = 1
+	- var pageTitle = 'Service & Contact'
+	- var bodyClass = 'service'
+block content
+	include _masthead
+	.hero__outer
+		.hero__visual--mobile
+		.container
+			.row
+				.col-xs-12.col-sm-8.col-md-6
+					.hero
+						.hero__text
+							h1.hero__header Voor snel antwoord op uw vraag. Lees het hier of bel ons.
+	.article__outer
+		.container
+			.article
+				.row
+					.col-xs-12.col-ts-6.col-ts-xpr.col-sm-7
+						.article__part
+							h2.article__header Handleiding voor gebruik#[br.h-xs.v-md] KPN WiFi HotSpots
+							p Bent u al een KPN WiFi HotSpot en heeft u vragen over hoe de dienst werkt? Download onze #[a(href='#{handleidingLink}') handleiding (pdf)] met uitgebreide informatie.
+							h2.article__header Veelgestelde vragen
+							h3.article__subheader Wat gebeurt er als mijn apparatuur stuk is?
+							p KPN WiFi HotSpots vervangt en onderhoudt haar apparatuur in geval van technische problemen.
+							h3.article__subheader Op welke manier kunnen mijn gasten technische ondersteuning krijgen?
+							p U kunt uw gasten doorverwijzen naar de website #[a(href='#{eindGebruikerSupportLink}' target='_blank') www.kpn.com/hotspots]. Hierop kunnen zij alle informatie voor de eindgebruiker vinden. Ook kunnen uw gasten 24/7 contact opnemen met onze servicedesk #[a(href='tel:08000414').phone-number 0800 0414].
+							h3.article__subheader Hoe bestel ik marketingmateriaal?
+							p Marketingmateriaal in de vorm van stickers, folders, leaflets en tafelstandaarden kunt u bestellen via #[a(href='#{mijnHotSpotLink}' target='_blank') Mijn KPN WiFi HotSpots]. Zodra u een KPN WiFi HotSpot bent krijgt u toegang tot dit systeem. Mocht u vragen hebben, dan kunt u contact opnemen via het contactformulier op deze pagina.
+							h3.article__subheader Hoe wijzig ik mijn inlogportal?
+							p Alle vragen, opmerkingen en verzoeken met betrekking tot uw inlogportal kunnen ingediend worden via #[nobr #[a(href='mailto:info-kpnhotspots@kpn.com') info-kpnhotspots@kpn.com]].
+							h3.article__subheader Kan ik de SSID ‘KPN’ wijzigen in de naam van mijn locatie?
+							p Ja, voor nieuwe locaties is het mogelijk om een extra SSID met de naam van uw keuze toe te voegen . Voor bestaande locaties zullen we in overleg met u de mogelijkheden onderzoeken. 
+							h3.article__subheader Hoe lang duurt een overeenkomst?
+							p Een standaard overeenkomst wordt voor 3 jaar afgesloten. 
+							h3.article__subheader Wat als ik extra dekking wil? Valt dit binnen de standaardprijs van € 50,- per maand?
+							p Het aanbod van € 50,- per maand geldt voor maximaal vier access points (punt van waaruit het WiFi-signaal wordt verspreid), echter zal het eenmalige startbedrag bij meer dan één access point hoger zijn. Voor meer informatie over de startbedragen, neem contact op met onze klantenservice door het contactformulier op deze pagina in te vullen.
+							h3.article__subheader Waarom zou ik niet gewoon mijn huidige internetverbinding openzetten voor mijn klanten?
+							p Het lijkt zo aantrekkelijk, goedkoop en simpel: uw bestaande internetverbinding openzetten voor uw gasten. Maar als u uw eigen internetverbinding openzet, bent u zelf aansprakelijk voor eventueel misbruik. #[a(href='#{risicosLink}' target='_blank') Lees meer]...
+							//-ul.bullet-list
+								li U loopt het risico op afsluiting bij misbruik door één van uw gasten, zoals aangegeven staat in de Algemene Voorwaarden van uw provider.
+								li U dient de lokale en EU wetgeving, met betrekking tot datalogging, na te volgen.
+								li Het internetgebruik van uw gasten is van invloed op de performance van uw eigen privé of zakelijke internetverbinding.
+								li U bent als aanbieder van publiek WiFi aansprakelijk voor het internetgebruik van uw klanten (bijv. downloaden verboden sites en spam).
+					.col-xs-12.col-ts-6.col-ts-xpl.col-sm-5
+						.article__part
+							h2.article__header Contact
+							p Raadpleeg de veelgestelde vragen voor een snel antwoord op uw vraag. Staat uw vraag er niet tussen? Neem dan contact op met onze helpdesk via onderstaand contactformulier. Wij streven ernaar om u binnen twee werkdagen antwoord te geven.
+							p Bent u al een KPN WiFi HotSpot en heeft u vragen over bijvoorbeeld inlogcodes of de werking van KPN WiFi HotSpots op uw locatie? Neem dan contact op met onze helpdesk op #[a(href='tel:08000414').phone-number 0800 0414].
+							p.hidden#contact_text_body
+							.contact
+								form.contact__form(data-tip="{ 'fields': [ 'name', 'company', 'phone_number', 'email', 'question', 'g-recaptcha-response' ], 'url': 'email/contact.php', 'function': 'contact' }" data-form="1")
+									.form-group.contact__naam
+										label Naam
+										input.form-control(type='text', placeholder='Naam' name='name' data-error='#{errorNaam}' required)
+									.form-group.contact__bedrijf
+										label Bedrijf
+										input.form-control(type='text', placeholder='Bedrijf' name='company' data-error='#{errorBedrijf}' required)
+									.form-group.contact__telefoon
+										label Telefoon
+										input.form-control(type='tel', placeholder='Telefoonnummer' name='phone_number' data-error='#{errorTelefoon}' required)
+									.form-group.contact__email
+										label E-mail
+										input.form-control(type='email', placeholder='E-mailadres' name='email' data-error='#{errorEmail}' required)
+									.form-group.contact__vraag
+										label Mijn vraag
+										textarea.form-control(rows='4', name='question' data-error='#{errorVraag}' required)
+									input(type="hidden" name="g-recaptcha-response")
+									button(type='submit').contact__cta.kpn-button Versturen
+									include _captcha_modal
+	include _footer

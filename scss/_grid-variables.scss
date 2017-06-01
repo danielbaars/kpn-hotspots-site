@@ -1,0 +1,51 @@
+$phone-ls-min: 480px !default;
+$tablet-small-min: 600px !default;
+$tablet-min: 768px !default;
+$desktop-min: 992px !default;
+$desktop-wide-min: 1200px !default;
+
+$phone-max: ($phone-ls-min - 1) !default;
+$phone-ls-max: ($tablet-small-min - 1) !default;
+$tablet-small-max: ($tablet-min - 1) !default;
+$tablet-max: ($desktop-min - 1) !default;
+$desktop-max: ($desktop-wide-min - 1) !default;
+
+$phone-ls: "(min-width:#{$phone-ls-min})";
+$tablet-small: "(min-width:#{$tablet-small-min})";
+$tablet: "(min-width:#{$tablet-min})";
+$desktop: "(min-width:#{$desktop-min})";
+$desktop-wide: "(min-width:#{$desktop-wide-min})";
+
+$phone-only: "(max-width:#{$phone-max})";
+$phone-phone-ls-only: "(max-width:#{$phone-ls-max})";
+$phone-tablet-small-only: "(max-width:#{$tablet-small-max})";
+$phone-tablet-only: "(max-width:#{$tablet-max})";
+
+$phone-ls-only: "(min-width:#{$phone-ls-min}) and (max-width:#{$phone-ls-max})";
+$phone-ls-tablet-small-only: "(min-width:#{$phone-ls-min}) and (max-width:#{$tablet-small-max})";
+
+$tablet-small-only: "(min-width:#{$tablet-small-min}) and (max-width:#{$tablet-small-max})";
+$tablet-small-tablet-only: "(min-width:#{$tablet-small-min}) and (max-width:#{$tablet-max})";
+
+$tablet-only: "(min-width:#{$tablet-min}) and (max-width:#{$tablet-max})";
+$tablet-desktop-only: "(min-width:#{$tablet-min}) and (max-width:#{$desktop-max})";
+
+$desktop-only: "(min-width:#{$desktop-min}) and (max-width:#{$desktop-max})";
+
+$galaxys5: "(min-width: 360px)";
+$iphone6: "(min-width: 375px)";
+$iphone6plus: "(min-width: 414px)";
+
+$container-tablet-small: 590px;
+$container-tablet: 740px;
+$container-desktop: 970px;
+$container-desktop-wide: 1170px;
+
+
+// ABOUT TO BE DEPRECATED
+
+$container-ts: $container-tablet-small;
+$phablet: $phone-ls;
+$phablet-min: $phone-ls-min;
+$phablet-only: $phone-ls-only;
+$phone-phablet-only: $phone-phone-ls-only;

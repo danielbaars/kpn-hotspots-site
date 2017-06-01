@@ -1,0 +1,264 @@
+#cookie_warning.hidden
+   style.
+      #cookie_warning {
+         position: fixed;
+         top: 0;
+         left: 0;
+         z-index: 99999999;
+      }
+      #KPN_cookie {
+         -moz-box-sizing: border-box;
+         -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+         display: block;
+         position: fixed;
+         bottom: 0;
+         top: 0;
+         left: 0;
+         right: 0;
+         background: #000;
+         background: rgba(0, 0, 0, 0.6);
+         border: none;
+         margin: 0;
+         padding: 0px;
+         z-index: 99999999;
+      }
+
+      #KPN_cookie a {
+         color: #337ab7;
+      }
+
+      #KPN_cookie p {
+         line-height: 1.1em;
+         font-size: 13px;
+         padding: 8px 0;
+         margin: 0;
+      }
+
+      #KPN_cookie_wrapper {
+         position: absolute;
+         top: 8px;
+         left: 8px;
+         right: 8px;
+         margin-left: 0px;
+         background-color: #fff;
+      }
+
+      #KPN_cookie_wrapper:after {
+         content: "";
+         clear: both;
+         visibility: hidden;
+         font-size: 0;
+         height: 0;
+         display: block;
+      }
+
+      #KPN_cookie_header {
+         position: relative;
+         overflow: hidden;
+         height: 42px;
+      }
+
+      #KPN_cookie_header_image {
+         display: none;
+      }
+
+      #KPN_cookie_header_logo {
+         position: absolute;
+         top: 12px;
+         left: 12px;
+         width: 60px;
+      }
+
+      #KPN_cookie_content_wrapper {
+         padding: 0 10px 10px 10px;
+         line-height: 1.1em;
+      }
+
+      #KPN_cookie_text {
+         text-align: left;
+         font-size: 13px;
+         float: left;
+         color: #666;
+      }
+
+      #KPN_cookie_text_bottom {
+         clear: both;
+         font-size: 13px;
+      }
+
+      #KPN_cookie_text_bottom:after {
+         content: "";
+         clear: both;
+         visibility: hidden;
+         font-size: 0;
+         height: 0;
+         display: block;
+      }
+
+      .KPN_cookie_button {
+         color: #fff;
+         white-space: nowrap;
+         text-decoration: none;
+         float: none;
+         text-align: center;
+         z-index: 99;
+         padding: 10px 0px;
+         margin: 0;
+         width: 100%;
+         height: auto;
+         cursor: pointer;
+         background-color: #0099ff;
+         border-radius: 3px;
+      }
+
+      .KPN_cookie_button:hover {
+         color: #fff;
+         background: #0077cc;
+      }
+
+      #KPN_cookie_text_settings {
+         float: none;
+         margin-top: 8px;
+         width: 100%;
+      }
+
+      /* Regular mobile */
+      @media screen and (min-width: 320px) {
+         #KPN_cookie_content_wrapper {
+            line-height: 1.35em;
+         }
+
+         #KPN_cookie p {
+            line-height: 1.35em;
+         }
+      }
+
+      /* Flipped mobile */
+      @media screen and (max-height: 440px) {
+         #KPN_cookie_text {
+            max-height: 120px;
+            overflow: hidden;
+            overflow-y: scroll;
+         }
+
+         #KPN_cookie_image_trimmer {
+            max-height: 160px;
+            overflow: hidden;
+         }
+      }
+
+      @media screen and (max-height: 400px) {
+         #KPN_cookie_text {
+            max-height: 75px;
+         }
+      }
+
+      @media screen and (max-height: 340px) {
+         #KPN_cookie_text {
+            max-height: 55px;
+         }
+      }
+
+      /* Tablet */
+      @media screen and (min-width: 480px) {
+         #KPN_cookie_content_wrapper {
+            padding: 20px;
+         }
+
+         #KPN_cookie_wrapper {
+            top: 16px;
+            left: 16px;
+            right: 16px;
+            margin-left: 0px;
+         }
+
+         #KPN_cookie_header_image {
+            display: block;
+            width: 100%;
+            /*margin-top: -10%;*/
+         }
+
+         #KPN_cookie_header_logo {
+            display: none;
+         }
+
+         #KPN_cookie_header {
+            height: auto;
+            max-height: 120px;
+         }
+
+         .KPN_cookie_button {
+            float: left;
+            width: 30%;
+         }
+
+         #KPN_cookie_text_settings {
+            margin-top: 0px;
+            float: right;
+            width: 67%;
+         }
+      }
+
+      /* Desktop */
+      @media screen and (min-width: 720px) {
+         #KPN_cookie_wrapper {
+            width: 620px;
+            left: 50%;
+            margin-left: -310px;
+         }
+
+         #KPN_cookie_header_image {
+            /*margin-top:-90px;*/
+         }
+      }
+
+      @media screen and (min-width: 720px) and (min-height: 500px) {
+         #KPN_cookie_wrapper {
+            top: 5%;
+         }
+      }
+
+      @media screen and (min-width: 720px) and (min-height: 580px) {
+         #KPN_cookie_header_image {
+            margin-top: 0px;
+         }
+
+         #KPN_cookie_header {
+            overflow: visible;
+            max-height: none;
+         }
+
+         #KPN_cookie_wrapper {
+            top: 15%;
+         }
+      }
+
+      /* IE8 */
+      .ie8 #KPN_cookie_wrapper {
+         top: 10%
+      }
+
+   #KPN_cookie
+     #KPN_cookie_wrapper
+       #KPN_cookie_header
+         img#KPN_cookie_header_image(src='img/cookie-620x120.jpg', alt='KPN optimaliseert deze website met cookies')
+         img#KPN_cookie_header_logo(src='img/kpn_logo.png', alt='logo')
+       #KPN_cookie_content_wrapper.newdesign
+         #KPN_cookie_text
+           p
+             b
+               | KPN en haar merken zijn continu bezig met het verbeteren van onze dienstverlening om je beter en persoonlijker van dienst te kunnen zijn.
+           p
+             | Wij gebruiken hiervoor cookies op onze websites. Daarnaast verzamelen wij via onze websites ook andere gegevens van je, zoals je IP-adres, clickgedrag en gegevens die je zelf bij ons achterlaat. Als je klant van ons bent dan combineren wij deze gegevens met de gegevens die wij van je hebben omdat je klant van ons bent. Met je akkoord verleen je toestemming voor het optimale gebruik van cookies en voor het analyseren en combineren van je gegevens.
+         #KPN_cookie_text_bottom
+           .KPN_cookie_button.KPN_cookie_personal.btn-blue
+             | Cookies accepteren
+           #KPN_cookie_text_settings
+             | Lees&nbsp;
+             a.KPN_cookie_click(href='cookies.html') hier
+             |  meer over de cookies die wij plaatsen, over&nbsp;
+             a(href='https://www.kpn.com/algemeen/missie-en-privacy-statement.htm') ons privacybeleid
+             |  en over hoe je&nbsp;
+             a.KPN_cookie_click(href='https://www.kpn.com/algemeen/cookies.htm') je instellingen
+             |  kunt aanpassen.

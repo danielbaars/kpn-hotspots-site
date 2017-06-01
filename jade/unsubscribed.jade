@@ -1,0 +1,44 @@
+mixin keuze(classModifier)
+    .keuze(class="keuze--#{classModifier}")
+        h3.keuze__header Uw bestelling
+        ul.keuze__list
+            li.keuze__list__item 1 KPN WiFi HotSpot access point
+            li.keuze__list__item Contractduur: 36&nbsp;maanden
+            li.keuze__list__item Maandelijkse kosten: €&nbsp;50,- excl. BTW
+        h3.keuze__header Uw korting
+        ul.keuze__list
+            li.keuze__list__item #[strong Gratis apparatuur en installatie] (normaal €&nbsp;600,&#8209;)
+            li.keuze__list__item #[strong Eerste zes maanden 50%&nbsp;korting] op maandelijkse kosten
+extends default
+block head
+    - var devVersion = true
+    - var version = 1
+    - var pageTitle = 'Succesvol afgemeld'
+    - var bodyClass = 'bestellen bedankt'
+block content
+    include _masthead
+    .hero__outer
+        .hero__visual--mobile
+        .container
+            .row
+                .col-xs-12.col-sm-8.col-md-6
+                    .hero
+                        .hero__text
+                            h1.hero__header Succesvol afgemeld
+                            p.hero__intro U zult niet langer e-mails van ons ontvangen.
+    //-.bon__outer
+        .container
+            .row
+                //- .col-xs-12.hidden-ts-lg#bekijk
+                    .bekijk-uw-bestelling Bekijk uw bestelling
+                    +keuze('xs')
+    //-.article__outer
+        .container
+            .article
+                .row
+                    .col-xs-12.col-ts-7.col-ts-xpr
+                        h2.article__header U bent succesvol afgemeld van onze nieuwsbrief
+                        p U zult niet langer e-mails van ons ontvangen.
+                    //- .hidden-xs-ls.col-ts-5.col-ts-xpl
+                        +keuze
+    include _footer

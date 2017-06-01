@@ -1,0 +1,160 @@
+mixin keuze(classModifier)
+	.keuze(class="keuze--#{classModifier}")
+		h3.keuze__header Uw bestelling
+		ul.keuze__list
+			li.keuze__list__item 1 KPN WiFi HotSpot access point
+			li.keuze__list__item Contractduur: 36&nbsp;maanden
+			li.keuze__list__item Maandelijkse kosten: €&nbsp;50,- excl. BTW
+		h3.keuze__header Uw korting
+		ul.keuze__list
+			li.keuze__list__item #[strong Gratis apparatuur en installatie] (normaal €&nbsp;600,&#8209;)
+			li.keuze__list__item #[strong Eerste zes maanden 50%&nbsp;korting] op maandelijkse kosten
+
+extends default
+block head
+	- var devVersion = true
+	- var version = 1
+	- var pageTitle = 'Bestellen'
+	- var bodyClass = 'bestellen'
+	link(href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet")
+	link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet")
+block content
+	include _masthead
+	.hero__outer
+		.hero__visual--mobile
+		.container
+			.row
+				.col-xs-12.col-sm-8.col-md-6
+					.hero
+						.hero__text
+							h1.hero__header In 4 tot 6 weken bent u een KPN WiFi Hotspot
+							p.hero__intro Fijn dat u kiest voor KPN WiFi HotSpots! Vult u onderstaand formulier in, dan kunnen uw gasten binnenkort zorgeloos draadloos internetten.
+	.bon__outer
+		.container
+			.row
+				.col-xs-12.hidden-ts-lg#bekijk
+					.bekijk-uw-bestelling Bekijk uw bestelling
+					+keuze('xs')
+	.article__outer
+		.container
+			.article
+				.row
+					.col-xs-12.col-ts-7.col-ts-xpr
+						form.bestelform#order_form(method="post" action="order/order.php")
+							h3.bestelform__header Contactgegevens
+							.form-group.bestelform__bedrijf
+								label.bestelform__subheader Bedrijfsnaam
+								input.form-control(type='text', placeholder='' name='company' data-error='#{errorBedrijf}' required)
+								.checked-sign
+							.form-group.bestelform__aanhef
+								label.bestelform__subheader Aanhef
+								label(class="radio-inline")
+									input(type="radio" name="gender" value="dhr" checked)
+									| #[span.checkbox-value Dhr.]
+								label(class="radio-inline")
+									input(type="radio" name="gender" value="mevr")
+									| #[span.checkbox-value Mevr.]								
+							.form-group.bestelform__voornaam
+								label.bestelform__subheader Voornaam
+								input.form-control(type='text' placeholder='' name='first_name' data-error='#{errorVoornaam}' required)
+								.checked-sign
+							.form-group.bestelform__achternaam
+								label.bestelform__subheader Achternaam
+								input.form-control(type='text' placeholder='' name='last_name' data-error='#{errorAchternaam}' required)
+								.checked-sign
+							.form-group.bestelform__postcode
+								label.bestelform__subheader Postcode
+								<input name="postal_code" type="text" maxlength="7" data-required="open" pattern="^(\d)(\d)(\d)(\d)(\s?)([a-zA-Z])([a-zA-Z])$" class="form-control no-required-check" data-address='adres' data-house="house_number" data-error="#{errorPostcode}" required="required">
+								.checked-sign
+							.form-group.bestelform__adres
+								label.bestelform__subheader Huisnummer
+								.row
+									.col-xs-7.col-ts-6
+										input.form-control.no-required-check(type='text', placeholder='Nr.' pattern='#{regExHuisnummer}' name='house_number' id='house_number' data-error="#{errorHuisnummer}" required)
+										.checked-sign
+									.col-xs-5.col-ts-6
+										input.form-control(type='text', placeholder='Toev.' pattern='#{regExToevoeging}' data-error="#{errorToevoeging}" name='number_suffix' optional)
+										.checked-sign
+								.row.hidden.warning-message
+									br
+									.col-lg-12
+										p We konden uw combinatie van postcode en huisnummer niet vinden. Klopt deze wél? Ga dan verder.
+							.form-group.bestelform__huisnummer.hidden#adres(data-tip="{ 'street': 'street', 'city': 'city' }")
+								label.bestelform__subheader Adres
+								.row
+									.col-xs-7.col-ts-6
+										input.form-control(type='text', placeholder='Straat' name='street' disabled)
+									.col-xs-5.col-ts-6
+										input.form-control(type='text', placeholder='Stad' name='city' disabled)
+							.form-group.bestelform__email
+								label.bestelform__subheader E-mailadres
+								input.form-control(type='email', placeholder='' name='email' data-error="#{errorEmail}" required)
+								.checked-sign
+							.form-group.bestelform__telefoon
+								label.bestelform__subheader Telefoonnummer
+								input.form-control(type='tel', placeholder='' name='phone_number' data-error='#{errorEmail}' required)
+								.checked-sign
+							h3.bestelform__header Factuurgegevens		
+							.form-group.bestelform__afwijkende-factuurgegevens-checkbox
+								.checkbox
+									label
+										input(type='checkbox', value='' name="factuur" id="factuur_check")
+										| #[span.checkbox-value Het factuuradres wijkt af van het bovenstaande afleveradres]
+							.bestelform__afwijkende-factuurgegevens#factuur_form
+								.form-group.bestelform__postcode.bestelform__postcode-factuur
+									label.bestelform__subheader Postcode									
+									<input name="postal_code_invoice" type="text" maxlength="7" data-required="open" pattern="^(\d)(\d)(\d)(\d)(\s?)([a-zA-Z])([a-zA-Z])$" data-error="#{errorPostcode}" class="form-control no-required-check" data-address='adres_invoice' data-house="house_number_invoice">
+									.checked-sign
+								.form-group.bestelform__huisnummer-factuur
+									label.bestelform__subheader Huisnummer
+									.row
+										.col-xs-7.col-ts-6
+											input.form-control.no-required-check(type='text', placeholder='Nr.' pattern='#{regExHuisnummer}' data-error="#{errorHuisnummer}" name='house_number_invoice' id='house_number_invoice' data-required)
+											.checked-sign
+										.col-xs-5.col-ts-6
+											input.form-control(type='text', placeholder='Toev.' pattern='#{regExToevoeging}' data-error="#{errorToevoeging}" name='number_suffix_invoice' optional)
+											.checked-sign
+								.form-group.bestelform__huisnummer.hidden#adres_invoice(data-tip="{ 'street': 'street_invoice', 'city': 'city_invoice' }")
+									label.bestelform__subheader Adres
+									.row
+										.col-xs-7.col-ts-6
+											input.form-control(type='text', placeholder='Straat' name='street_invoice' disabled)
+										.col-xs-5.col-ts-6
+											input.form-control(type='text', placeholder='Stad' name='city_invoice' disabled)
+								.form-group.bestelform__ter-attentie-van
+									label.bestelform__subheader T.a.v.
+									input.form-control(type='text' placeholder='' name='attn' optional)
+									.checked-sign
+								.form-group.bestelform__email-factuur
+									label.bestelform__subheader E-mailadres
+									input.form-control(type='email', placeholder='' name='email_invoice' data-error='#{errorEmail}' data-required)
+									.checked-sign
+								.form-group.bestelform__referentie
+									label.bestelform__subheader Referentie
+									input.form-control(type='text' placeholder='' name='reference' optional)
+									.checked-sign
+									.bestelform__beschrijving Een kenmerk dat u op uw factuur terug wilt zien.
+							.form-group.bestelform__verzendwijze-factuur
+								label.bestelform__subheader Verzendwijze factuur
+								label(class="radio-inline")
+									input(type="radio" name="invoice_digital_or_printed" value="email" checked)
+									| #[span.checkbox-value.h-ls.v-ts.h-sm Per e-mail]#[span.checkbox-value.h-xs.v-ls.h-ts.v-sm Factuur per e-mail]
+								label(class="radio-inline")
+									input(type="radio" name="invoice_digital_or_printed" value="print")
+									| #[span.checkbox-value.h-ls.v-ts.h-sm Per post]#[span.checkbox-value.h-xs.v-ls.h-ts.v-sm Factuur per post]
+							.form-group.bestelform__iban
+								label.bestelform__subheader IBAN
+								<input class="form-control" name="iban" type="text" pattern="/(?i)(^AL\d{10}[0-9A-Z]{16}$|^AD\d{10}[0-9A-Z]{12}$|^AT\d{18}$|^BH\d{2}[A-Z]{4}[0-9A-Z]{14}$|^BE\d{14}$|^BA\d{18}$|^BG\d{2}[A-Z]{4}\d{6}[0-9A-Z]{8}$|^HR\d{19}$|^CY\d{10}[0-9A-Z]{16}$|^CZ\d{22}$|^DK\d{16}$|^FO\d{16}$|^GL\d{16}$|^DO\d{2}[0-9A-Z]{4}\d{20}$|^EE\d{18}$|^FI\d{16}$|^FR\d{12}[0-9A-Z]{11}\d{2}$|^GE\d{2}[A-Z]{2}\d{16}$|^DE\d{20}$|^GI\d{2}[A-Z]{4}[0-9A-Z]{15}$|^GR\d{9}[0-9A-Z]{16}$|^HU\d{26}$|^IS\d{24}$|^IE\d{2}[A-Z]{4}\d{14}$|^IL\d{21}$|^IT\d{2}[A-Z]\d{10}[0-9A-Z]{12}$|^[A-Z]{2}\d{5}[0-9A-Z]{13}$|^KW\d{2}[A-Z]{4}22!$|^LV\d{2}[A-Z]{4}[0-9A-Z]{13}$|^LB\d{6}[0-9A-Z]{20}$|^LI\d{7}[0-9A-Z]{12}$|^LT\d{18}$|^LU\d{5}[0-9A-Z]{13}$|^MK\d{5}[0-9A-Z]{10}\d{2}$|^MT\d{2}[A-Z]{4}\d{5}[0-9A-Z]{18}$|^MR13\d{23}$|^MU\d{2}[A-Z]{4}\d{19}[A-Z]{3}$|^MC\d{12}[0-9A-Z]{11}\d{2}$|^ME\d{20}$|^NL\d{2}[A-Z]{4}\d{10}$|^NO\d{13}$|^PL\d{10}[0-9A-Z]{,16}n$|^PT\d{23}$|^RO\d{2}[A-Z]{4}[0-9A-Z]{16}$|^SM\d{2}[A-Z]\d{10}[0-9A-Z]{12}$|^SA\d{4}[0-9A-Z]{18}$|^RS\d{20}$|^SK\d{22}$|^SI\d{17}$|^ES\d{22}$|^SE\d{22}$|^CH\d{7}[0-9A-Z]{12}$|^TN59\d{20}$|^TR\d{7}[0-9A-Z]{17}$|^AE\d{21}$|^GB\d{2}[A-Z]{4}\d{14}$)/i" data-error="#{errorIBAN}" required />
+								.checked-sign
+							h3.bestelform__header Akkoordverklaring
+							.form-group.bestelform__akkoordverklaring
+								//-label Akkoordverklaring
+								input(name='agreement', type='checkbox', value='true' data-error="#{errorAkkoord}" required)
+								.bestelform__akkoordverklaring__tekst Ik ga akkoord met de #[a(href='#{algemeneVoorwaardenLink}' target='_blank') Algemene Voorwaarden KPN WiFi HotSpots], de #[a(href='#{leveringsVoorwaardenLink}' target='_blank') Algemene Leverings&shy;voorwaarden KPN], #[a(href='#{dienstBeschrijvingLink}', target='_blank') KPN WiFi Dienstbeschrijving] en de #[a(href='#{specifiekeVoorwaardenLink}' target='_blank') Specifieke contractvoorwaarden en bepalingen].*
+								.bestelform__beschrijving #[span.asterisk *] De overeenkomst gaat in op het moment van verzending. De looptijd zal aanvangen bij oplevering van de dienst.
+							button(type='submit').bestelform__cta.kpn-button Bestellen
+							input(type="hidden" name="g-recaptcha-response")
+							include _captcha_modal
+					.hidden-xs-ls.col-ts-5.col-ts-xpl
+						+keuze
+	include _footer

@@ -1,0 +1,159 @@
+extends default
+block head
+	- var devVersion = true
+	- var version = 1
+	- var pageTitle = 'KPN WiFi HotSpots voor gratis internet zonder gedoe'
+	- var metaDescription = 'Bied uw klanten extra service met gratis internet van KPN WiFi Hotspots. Zonder gedoe, met meertalige helpdesk en nu met gratis apparatuur en installatie.'
+	- var bodyClass = 'over'
+block content
+	- var voordeel01 = '<a href="#snel">Snel draadloos internet</a>'
+	- var voordeel02 = '<a href="#veilig">Veilig en betrouwbaar</a>'
+	- var voordeel03 = '<a href="#business-modellen">Business modellen</a>'
+	- var voordeel04 = '<a href="#helpdesk">Meertalige helpdesk 24/7</a>'
+	- var voordeel05 = '<a href="#advertentiemogelijkheden">Advertentiemogelijkheden</a>'
+	- var voordeel06 = '<a href="#huisstijl">Inlogpagina in eigen stijl</a>'
+	- var voordeel07 = '<a href="#wettelijke-eisen">Wettelijke eisen</a>'
+	- var voordeel08 = '<a href="#marketingmateriaal">Gratis marketingmateriaal</a>'
+	- var voordeel09 = '<a href="#social-login">Social login (optioneel)</a>'
+	- var voordeel10 = '<a href="#multiservice">Multiservice WiFi (optioneel)</a>'
+	- var voordeel11 = '<a href="#mijn">Mijn HotSpots van KPN</a>'
+	- var voordeel12 = '<a href="#kpn-fon">KPN Fon</a>'
+	- var voordeel13 = '<a href="#hervatten">Sessie hervatten</a>'
+	- var voordeel14 = '<a href="#bandbreedtemanagement">Bandbreedtemanagement</a>'
+	- var voordeel15 = '<a href="#apparatuur">Professionele apparatuur</a>'
+	include _masthead
+	.hero__outer
+		.hero__visual--mobile
+		.container
+			.row
+				.col-xs-12.col-sm-8.col-md-6
+					.hero
+						.hero__text
+							h1.hero__header Wat zijn KPN WiFi HotSpots?
+							p.hero__intro Tegenwoordig is WiFi één van de meest onmisbare diensten op publiek toegankelijke plaatsen. We willen overal bereikbaar zijn, en bereikbaar blijven. 
+							p.hero__intro Als KPN WiFi HotSpot biedt u uw gasten snel, betrouwbaar en gratis draadloos internet (WiFi). Uw gasten internetten op dezelfde manier als thuis of op hun werk. In onze #[a(href='#{dienstBeschrijvingLink}') Dienstbeschrijving (pdf)] leggen we alles uit over deze dienst.
+
+	.article__outer
+		.container
+			.row
+				.col-xs-12
+					.article
+						.article__part
+							h2.article__header Alle voordelen
+							p.article__intro WiFi HotSpots van KPN bieden vele voordelen. Voor u, maar zeker ook voor uw gasten.
+							ul.bullet-list.h-ts
+								li !{voordeel01}
+								li !{voordeel02}
+								li !{voordeel03}
+								li !{voordeel04}
+								li !{voordeel05}
+								li !{voordeel06}
+								li !{voordeel07}
+								li !{voordeel08}
+								li !{voordeel09}
+								li !{voordeel10}
+								li !{voordeel11}
+								li !{voordeel12}
+								li !{voordeel13}
+								li !{voordeel14}
+								li !{voordeel15}
+							.article__nav.h-xs.v-ts.h-md
+								.row
+									.col-xs-12.col-ts-6
+										ul.article__nav__column
+											li.article__nav__item !{voordeel01}
+											li.article__nav__item !{voordeel02}
+											li.article__nav__item !{voordeel03}
+											li.article__nav__item !{voordeel04}
+											li.article__nav__item !{voordeel05}
+											li.article__nav__item !{voordeel06}
+											li.article__nav__item !{voordeel07}
+											li.article__nav__item !{voordeel08}
+									.col-xs-12.col-ts-6
+										ul.article__nav__column
+											li.article__nav__item !{voordeel09}
+											li.article__nav__item !{voordeel10}
+											li.article__nav__item !{voordeel11}
+											li.article__nav__item !{voordeel12}
+											li.article__nav__item !{voordeel13}
+											li.article__nav__item !{voordeel14}
+											li.article__nav__item !{voordeel15}
+							.article__nav.h-xs.v-md
+								.row
+									.col-xs-12.col-sm-4
+										ul.article__nav__column
+											li.article__nav__item !{voordeel01}
+											li.article__nav__item !{voordeel02}
+											li.article__nav__item !{voordeel03}
+											li.article__nav__item !{voordeel04}
+											li.article__nav__item !{voordeel05}
+									.col-xs-12.col-sm-4
+										ul.article__nav__column
+											li.article__nav__item !{voordeel06}
+											li.article__nav__item !{voordeel07}
+											li.article__nav__item !{voordeel08}
+											li.article__nav__item !{voordeel09}
+											li.article__nav__item !{voordeel10}
+									.col-xs-12.col-sm-4
+										ul.article__nav__column
+											li.article__nav__item !{voordeel11}
+											li.article__nav__item !{voordeel12}
+											li.article__nav__item !{voordeel13}
+											li.article__nav__item !{voordeel14}
+											li.article__nav__item !{voordeel15}
+						.row
+							.col-xs-12.col-ts-6.col-ts-xpr
+								.article__part
+									h3.article__subheader#snel Snel draadloos internet
+									p Uw gasten kunnen draadloos internetten zoals ze gewend zijn thuis of op het werk. Gasten blijven op deze manier langer, of komen sneller bij u terug.
+									h3.article__subheader#veilig Veilig en betrouwbaar
+									p De premium WiFi dienstverlening van KPN biedt een veilige en betrouwbare dienst die u uw gasten aanbiedt; het internetverkeer wordt bij KPN WiFi HotSpots, ten opzichte van een eigen WiFi internet aanbod, anders afgehandeld: publiek verkeer wordt via een apart netwerk behandeld en niet gecombineerd met het internetverkeer op uw bedrijfsaansluiting. Verder zijn alle handelingen op de portal (zowel het inloggen als betalen) https-beveiligd. Inkomend verkeer naar apparaten van de gasten (van buitenaf geïnitieerd) wordt niet toegestaan door KPN WiFi HotSpots. Bovendien laat KPN WiFi HotSpots regelmatig audits uitvoeren om de veiligheid van de portal op een hoog niveau te houden. 
+									h3.article__subheader#business-modellen Business modellen
+									p Als locatiehouder heeft u de keus uit vier Business modellen, namelijk;
+									h4.article__subsubheader 1. Gratis premium internet
+									p Het liefst willen uw gasten gratis gebruik maken van het internet. Dit is mogelijk met de dienst KPN WiFi gratis premium internet.
+									p Met gratis premium internet koopt u voor een vast bedrag per maand de complete onbeperkte dienst in, waarmee u verzekerd bent van een goede internetverbinding voor al uw gasten.
+									h4.article__subsubheader 2. Gratis premium internet 2.0
+									p Bij gratis premium internet 2.0 krijgt de klant een code van u als locatiehouder. Op deze manier kan niet iedereen inloggen op het netwerk, maar slechts de personen waar van u de toegang tot verstrekt of die online een tegoed hebben aangeschaft.
+									h4.article__subsubheader 3. Hybride internet
+									p Hybride internet is een combinatie van Gratis basisdienst en Premium Betaald internet.
+									p Bij Hybride internet kunt u als locatiehouder ervoor kiezen om uw klanten een bepaald aantal minuten gratis internet aan te bieden of de dienst te beperken tot een bepaalde performance. Naast deze gratis minuten kunnen uw klanten ervoor kiezen om te betalen voor de onbeperkte dienst. Dit gaat op dezelfde manier als bij de betaalde versie.
+									h4.article__subsubheader 4. Premium Betaald internet
+									p Bij Premium Betaald internet biedt u uw klanten WiFi aan onder andere door middel van betaalde vouchers.
+									p Betalen is ook online mogelijk via Creditcard, iDEAL, Paypal of door het afsluiten van een abonnement.
+									h3.article__subheader#helpdesk Meertalige helpdesk 24/7
+									p U en uw gasten hebben 24 uur per dag, 7 dagen per week toegang tot onze meertalige helpdesk. Onze helpdesk is ook internationaal te bereiken via gratis nummers.
+									h3.article__subheader#advertentiemogelijkheden Advertentiemogelijkheden
+									p Op uw ‘eigen’ portal is advertentieruimte beschikbaar. Deze ruimte kan door u ingezet worden voor promotie van uw organisatie of externe partijen. U levert de gewenste informatie aan, wij verzorgen het voor u!
+									h3.article__subheader#huisstijl Inlogpagina in uw eigen huisstijl
+									p Via een inlogpagina kunnen uw gasten inloggen om gebruik te kunnen maken van draadloos internet. En natuurlijk is het leuk dat deze inlogpagina past bij uw huisstijl! Bij KPN WiFi HotSpots kunt u de inlogpagina vier keer per jaar kosteloos door ons laten personaliseren naar uw wensen. Een mooie achtergrond, uw logo, de kleuren van uw bedrijf, het kan allemaal. En wij verzorgen het voor u!
+									h3.article__subheader#wettelijke-eisen Wettelijke eisen
+									p KPN WiFi leeft de wettelijke verplichtingen rond dataretentie en justitieel aftappen na.
+									h3.article__subheader#marketingmateriaal Gratis marketingmateriaal
+									p Om kenbaar te maken dat u WiFi aanbiedt op uw locatie hebben we marketingmateriaal ter beschikking. Dit kunt u geheel kosteloos bestellen.
+									h3.article__subheader#social-login Social login (optioneel)
+									p Het is ook mogelijk om gebruik te maken van social login. Gasten kunnen dan inloggen met hun Facebook-account, e-mailadres of door het beantwoorden van vragen (u kunt drie vragen uitkiezen om aan uw gast te stellen). Inloggen via Facebook kan met een like of check-in. Op deze manier maakt u gebruik van het sociale netwerk om uw eigen locatie te promoten.
+							.col-xs-12.col-ts-6.col-ts-xpl
+								.article__part
+									h3.article__subheader#multiservice Multiservice WiFi (optioneel)
+									p Uw WiFi-netwerk voldoet aan de nieuwste standaarden waarop aanvullende diensten worden aangeboden. Daarbij krijgt u een beveiligd WiFi-netwerk voor eigen gebruik of bedrijfstoepassingen. U bepaalt hiervoor een eigen SSID (netwerknaam) en een gescheiden WiFi-netwerk voor uw gasten.
+									h3.article__subheader#mijn Mijn HotSpots van KPN
+									p KPN WiFi maakt gebruik van een bestelsysteem (Mijn HotSpots van KPN), waar u als locatiehouder toegang toe heeft. Hier kunt u bestellingen plaatsen, statistieken bekijken en bij problemen en vragen direct contact met ons opnemen.
+									h3.article__subheader#kpn-fon KPN Fon
+									p U wordt onderdeel van het grootste publieke WiFi-netwerk van Nederland, waaronder het WiFi-netwerk van KPN Fon. KPN WiFi buitenshuis met KPN Fon Hotspots werkt volgens het geven en ontvangen principe, alleen krijgt u meer dan u geeft. U stelt een beetje van uw WiFi beschikbaar voor anderen, en u krijgt toegang tot ruim 800.000 zogeheten Fon HotSpots in Nederland en meer dan 17 miljoen Fon HotSpots wereldwijd. Via deze HotSpots krijgt u draadloos internet op uw smartphone, tablet op laptop. En het mooie is dat er wekelijks duizenden HotSpots bij komen. Gebruikers maken gebruik van de KPN Fon app en zullen uw locatie herkennen. Ook zullen zij waarderen dat u onderdeel bent van dit wereldwijde netwerk.
+									h3.article__subheader#hervatten Sessie hervatten
+									p De ‘sessie hervatten’ functionaliteit zorgt ervoor dat uw gast maar één keer per dag hoeft in te loggen op een KPN WiFi HotSpot. Hierna zal de sessie automatisch worden hervat op alle KPN WiFi HotSpots-locaties.
+									h3.article__subheader#bandbreedtemanagement Internetlijn en bandbreedtemanagement
+									p KPN legt in principe haar eigen internetlijn aan op uw locatie. In overleg kunnen we ook gebruik maken van reeds aanwezige internetlijnen. KPN maakt daarbij gebruik van ADSL, VDSL, Vectored DSL, FTTH glasvezel, Pairbonding en koppeling van diverse verbindingen (stacked). #[br]Om te voorkomen dat één gebruiker alle bandbreedte van een locatie naar zich toetrekt, wordt een maximale bandbreedte per gebruiker, ofwel het gebruikersprofiel, ingesteld. Dit profiel is hetzelfde voor alle gasten die gebruikmaken van dezelfde lijn. Indien nodig wordt de bandbreedte op locatie verhoogd om snel internet te blijven waarborgen. Als een gebruiker bedoeld of onbedoeld de dienstverlening negatief beïnvloedt wordt deze gebruiker en het verkeer geïsoleerd zodat andere gebruikers hier geen hinder van ondervinden.
+									h3.article__subheader#apparatuur Professionele apparatuur, Installatie en projectmanagement
+									p KPN WiFi levert en installeert de netwerk apparatuur voor het draadloze internet en de internetverbinding. KPN WiFi maakt daarbij gebruik van hoog waardige kwaliteit Access Points, managed switches en andere benodigde componenten. In overleg met de locatiehouder wordt er voor de locatie een WiFi dekkingsplan opgesteld. Hierin wordt onder andere beschreven waar op de locatie het draadloze internet wordt geïnstalleerd. KPN WiFi gebruikt professionele access points met een bandbreedte van 300Mbps die gebruik maken van ‘bandsteering’. Dit is een techniek waarbij apparaten die gebruik kunnen maken van 5 GHz gedwongen worden daarvan gebruik te maken, zodat op de 2.4 GHz frequentie ruimte wordt vrijgemaakt voor apparaten die geen 5 GHz ondersteuning hebben. Ook maken de access points gebruik van ‘adaptive antenna technology’, waarmee radioverbindingen automatisch geconcentreerd worden in de richting waar een gebruiker zich bevindt en deze ook blijft volgen. Dit in plaats van het standaard 360 graden rondstralen van een standaard access point. Hierdoor wordt niet alleen het uitgezonden signaal richting de gebruiker versterkt, maar wordt ook de ontvangstgevoeligheid voor het signaal vanaf de gebruiker vergroot. Toch blijft het maximale zendvermogen binnen de wettelijke grenzen. Het effectieve bereik van dit access point kan hierdoor tweemaal zo groot zijn als een ‘standaard’ access point.
+									a.kpn-button.h-ts(href="#{bestellenLink}") Aanvragen KPN WiFi HotSpot
+	.aanvragen__outer
+		.container
+			.row
+				.col-xs-12
+					.aanvragen
+						.centered-line
+						.button-background
+							a.kpn-button(href="#{bestellenLink}") Bestellen KPN WiFi HotSpot
+	include _footer

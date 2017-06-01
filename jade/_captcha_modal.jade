@@ -1,0 +1,9 @@
+.modal.fade#captchaModal
+   .modal-dialog
+      .modal-content
+         .modal-header
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+               span(aria-hidden='true') ×
+            h4.modal-title Om veiligheidsredenen moeten wij verifieren dat u een mens bent:
+         .modal-body
+            .g-recaptcha(data-sitekey="6Lf1Hw8TAAAAACXJNVkD4xHpSLR7JzyytaouQY3J" data-callback="captcha_callback")

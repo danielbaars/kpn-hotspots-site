@@ -1,0 +1,410 @@
+//
+// Responsive: Utility classes
+// --------------------------------------------------
+
+
+// IE10 in Windows (Phone) 8
+//
+// Support for responsive views via media queries is kind of borked in IE10, for
+// Surface/desktop in split view and for Windows Phone 8. This particular fix
+// must be accompanied by a snippet of JavaScript to sniff the user agent and
+// apply some conditional CSS to *only* the Surface/desktop Windows 8. Look at
+// our Getting Started page for more information on this bug.
+//
+// For more information, see the following:
+//
+// Issue: https://github.com/twbs/bootstrap/issues/10497
+// Docs: http://getbootstrap.com/getting-started/#support-ie10-width
+// Source: http://timkadlec.com/2013/01/windows-phone-8-and-device-width/
+// Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+
+@-ms-viewport {
+  width: device-width;
+}
+
+
+// Visibility utilities
+// Note: Deprecated .visible-xs, .visible-sm, .visible-md, and .visible-lg as of v3.2.0
+
+@include responsive-invisibility('.visible-xs, .visible-ls, .visible-ts, .visible-sm, .visible-md, .visible-lg');
+
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-ls-block,
+.visible-ls-inline,
+.visible-ls-inline-block,
+.visible-ts-block,
+.visible-ts-inline,
+.visible-ts-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+  display: none !important;
+}
+
+@media (max-width: $phone-max) {
+  @include responsive-visibility('.visible-xs');
+}
+.visible-xs-block {
+  @media (max-width: $phone-max) {
+    display: block !important;
+  }
+}
+.visible-xs-inline {
+  @media (max-width: $phone-max) {
+    display: inline !important;
+  }
+}
+.visible-xs-inline-block {
+  @media (max-width: $phone-max) {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: $phone-ls-min) and (max-width: $phone-ls-max) {
+  @include responsive-visibility('.visible-ls');
+}
+.visible-ls-block {
+  @media (min-width: $phone-ls-min) and (max-width: $phone-ls-max) {
+    display: block !important;
+  }
+}
+.visible-ls-inline {
+  @media (min-width: $phone-ls-min) and (max-width: $phone-ls-max) {
+    display: inline !important;
+  }
+}
+.visible-ls-inline-block {
+  @media (min-width: $phone-ls-min) and (max-width: $phone-ls-max) {
+    display: inline-block !important;
+  }
+}
+
+
+@media (min-width: $tablet-small-min) and (max-width: $tablet-small-max) {
+  @include responsive-visibility('.visible-ts');
+}
+.visible-ts-block {
+  @media (min-width: $tablet-small-min) and (max-width: $tablet-small-max) {
+    display: block !important;
+  }
+}
+.visible-ts-inline {
+  @media (min-width: $tablet-small-min) and (max-width: $tablet-small-max) {
+    display: inline !important;
+  }
+}
+.visible-ts-inline-block {
+  @media (min-width: $tablet-small-min) and (max-width: $tablet-small-max) {
+    display: inline-block !important;
+  }
+}
+
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  @include responsive-visibility('.visible-sm');
+}
+.visible-sm-block {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: block !important;
+  }
+}
+.visible-sm-inline {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: inline !important;
+  }
+}
+.visible-sm-inline-block {
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include responsive-visibility('.visible-md');
+}
+.visible-md-block {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: block !important;
+  }
+}
+.visible-md-inline {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: inline !important;
+  }
+}
+.visible-md-inline-block {
+  @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  @include responsive-visibility('.visible-lg');
+}
+.visible-lg-block {
+  @media (min-width: $screen-lg-min) {
+    display: block !important;
+  }
+}
+.visible-lg-inline {
+  @media (min-width: $screen-lg-min) {
+    display: inline !important;
+  }
+}
+.visible-lg-inline-block {
+  @media (min-width: $screen-lg-min) {
+    display: inline-block !important;
+  }
+}
+
+@media (max-width: $screen-xs - 1) {
+  @include responsive-invisibility('.hidden-xs');
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  @include responsive-invisibility('.hidden-sm');
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include responsive-invisibility('.hidden-md');
+}
+
+@media (min-width: $screen-lg-min) {
+  @include responsive-invisibility('.hidden-lg');
+}
+
+
+// Print utilities
+//
+// Media queries are placed on the inside to be mixin-friendly.
+
+// Note: Deprecated .visible-print as of v3.2.0
+
+@include responsive-invisibility('.visible-print');
+
+@media print {
+  @include responsive-visibility('.visible-print');
+}
+.visible-print-block {
+  display: none !important;
+
+  @media print {
+    display: block !important;
+  }
+}
+.visible-print-inline {
+  display: none !important;
+
+  @media print {
+    display: inline !important;
+  }
+}
+.visible-print-inline-block {
+  display: none !important;
+
+  @media print {
+    display: inline-block !important;
+  }
+}
+
+@media print {
+  @include responsive-invisibility('.hidden-print');
+}
+
+
+// EXTRA RESPONSIVE UTILITY CLASSES
+
+@media #{$phone-only} {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 360px) {
+  .hidden-sg {
+    display: none !important;
+  }
+}
+
+@media (min-width: 375px) {
+  .hidden-i6 {
+    display: none !important;
+  }
+}
+
+@media #{$phone-ls-only} {
+  .hidden-ls {
+    display: none !important;
+  }
+}
+
+@media #{$phone-ls} {
+  .hidden-ls-lg {
+    display: none !important;
+  }
+}
+
+@media #{$phone-phone-ls-only} {
+  .hidden-xs-ls {
+    display: none !important;
+  }
+}
+
+@media #{$phone-tablet-small-only} {
+  .hidden-xs-ts {
+    display: none !important;
+  }
+}
+
+@media #{$phone-tablet-only} {
+  .hidden-xs-sm {
+    display: none !important;
+  }
+}
+
+@media #{$tablet-small-only} {
+  .hidden-ts {
+    display: none !important;
+  }
+}
+
+@media #{$tablet-small} {
+  .hidden-ts-lg {
+    display: none !important;
+  }
+}
+
+@media #{$tablet-only} {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media #{$tablet} {
+  .hidden-sm-lg {
+    display: none !important;
+  }
+}
+
+@media #{$desktop-only} {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media #{$desktop} {
+  .hidden-md-lg {
+    display: none !important;
+  }
+}
+
+
+/* RESPONSIVE LINE-BREAKS */
+
+.h-xs {
+  display: none !important;
+}
+
+@media (min-width: 360px) {
+  .h-sg {
+    display: none !important;
+  }
+  .v-sg {
+    display: block !important;
+  }
+  .v-sg-ib {
+    display: inline-block !important;
+  }    
+}
+
+@media (min-width: 375px) {
+  .h-i6 {
+    display: none !important;
+  }
+  .v-i6 {
+    display: block !important;
+  }
+  .v-i6-ib {
+    display: inline-block !important;
+  }   
+}
+
+@media (min-width: 414px) {
+  .h-i6p {
+    display: none !important;
+  }
+  .v-i6p {
+    display: block !important;
+  }  
+  .v-i6p-ib {
+    display: inline-block !important;
+  }   
+}
+
+@media #{$phone-ls} {
+  .h-ls {
+    display: none !important;
+  }
+  .v-ls {
+    display: block !important;
+  } 
+  .v-ls-ib {
+    display: inline-block !important;
+  }   
+}
+
+@media #{$tablet-small} {
+  .h-ts {
+    display: none !important;
+  }
+  .v-ts {
+    display: block !important;
+  }  
+  .v-ts-ib {
+    display: inline-block !important;
+  }  
+}
+
+@media #{$tablet} {
+  .h-sm {
+    display: none !important;
+  }
+  .v-sm {
+    display: block !important;
+  } 
+  .v-sm-ib {
+    display: inline-block !important;
+  }   
+}
+
+@media #{$desktop} {
+  .h-md {
+    display: none !important;
+  }
+  .v-md {
+    display: block !important;
+  } 
+  .v-md-ib {
+    display: inline-block !important;
+  }   
+}
+
+@media #{$desktop-wide} {
+  .h-lg {
+    display: none !important;
+  }
+  .v-lg {
+    display: block !important;
+  } 
+  .v-lg-ib {
+    display: inline-block !important;
+  } 
+}

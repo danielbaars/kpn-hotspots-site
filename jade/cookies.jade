@@ -1,0 +1,47 @@
+extends default
+block head
+	- var devVersion = true
+	- var version = 1
+	- var pageTitle = 'Cookies'
+	- var bodyClass = 'cookies'
+	- var hide_cookies = true
+block content
+	include _masthead
+	.hero__outer
+		.hero__visual--mobile
+		.container
+			.row
+				.col-xs-12.col-sm-8.col-md-6
+					.hero
+						.hero__text
+							h1.hero__header Cookies
+	.article__outer
+		.container
+			.row
+				.col-xs-12
+					.article
+						.row
+							.col-xs-12.col-ts-6.col-ts-xpr
+								.article__part
+									h2.article__header Wat zijn cookies?
+									p KPN-websites maken gebruik van cookies. Cookies zijn kleine tekstbestandjes die op uw computer worden gezet als u een webpagina bezoekt.
+									p KPN-websites zijn goed beveiligd. Van cookies van KPN-websites kunt u verwachten dat ze uw bezoek aan de website vergemakkelijken en u kunt erop vertrouwen dat ze geen virussen op uw computer overbrengen.
+									h3.article__subheader Waarom gebruikt kpn.com cookies?
+									p Cookies zorgen ervoor dat de website werkt; Wij verzamelen en gebruiken uw persoonlijke gegevens op onze websites in de eerste plaats om onze (web)diensten aan u te kunnen leveren en om met u te communiceren, bijvoorbeeld om u veiligheidswaarschuwingen te verzenden.
+									h3.article__subheader Het gebruik van cookies maakt het gebruik van KPN-websites eenvoudiger
+									ul.bullet-list
+										li #[strong Tijdelijke cookie:] Daarmee wordt voorkomen dat u zich tijdens één bezoek tweemaal voor hetzelfde moet aanmelden.
+										li #[strong Permanente cookie:] Bij een volgend bezoek wordt uw inlognaam automatisch ingevuld en hoeft u alleen het wachtwoord in te vullen.
+
+
+							.col-xs-12.col-ts-6.col-ts-xpl
+								.article__part
+									h3.article__subheader Met cookies voert KPN onderzoek uit om kpnwifihotspots.nl te verbeteren
+									p Met cookies kan KPN informatie verzamelen over uw bezoek aan kpnwifihotspots.nl, inclusief de pagina’s die u op kpnwifihotspots.nl bekijkt, de links waarop u klikt en de andere acties die u onderneemt. Daarnaast verzamelt KPN bepaalde standaardinformatie die de browser (uw surfprogramma) naar elke website verzendt die u bezoekt, zoals het IP-adres, het type en de taal van de browser, de tijd van het bezoek en het webadres van waaruit u onze website bereikte.
+									p Met deze informatie kan KPN bepalen welke onderdelen van de site goed worden bekeken en waar minder bezoekers komen. Zo kan KPN ervoor zorgen dat de informatie die veel gezocht wordt, ook eenvoudig te vinden is.
+									.cookies__agreement
+										p Als u cookies wil gebruiken klik dan #[strong Ik ga akkoord]:
+										a.kpn-button.cookies__cta.cookies__cta--yes#cookie-compliance-submit(href='#') Ik ga akkoord
+										p Als u geen cookies wil gebruiken klik dan #[strong Niet akkoord]:
+										a.kpn-button.cookies__cta.cookies__cta--no#cookie-compliance-cancel(href='#') Niet akkoord
+	include _footer

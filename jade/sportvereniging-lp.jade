@@ -1,0 +1,144 @@
+extends default
+block head
+	- var devVersion = true
+	- var pageTitle = 'Sportverenigingen'
+	- var bodyClass = 'sportvereniging-lp'
+	- var sportVerenigingNaam = 'uw vereniging'
+	- var quotes = true
+block content
+	.hero__outer
+		.hero__home-visual-mobile.imgc: img(src="img/#{sportVerenigingLPFotoMobile}")
+		.container
+			.row
+				.col-xs-12
+					.hero
+						.row
+							.col-xs-12.col-sm-7.col-md-8
+								.hero__text-box
+									.hero__text.hero__text--home
+										h1.hero__header
+											script.
+												function getParameter(name, url) {
+													name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+													var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+													var results = regex.exec(url || location.search);
+													return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+												};
+												var name = getParameter("company_name", window.location);
+												if (typeof name == "string" && name.length > 0 && name.length <= 28) {
+													document.write("Word met " + name + " ook een KPN&nbsp;WiFi&nbsp;HotSpot");
+												} else {
+													document.write("Word met #{sportVerenigingNaam} ook een KPN&nbsp;WiFi&nbsp;HotSpot");
+												}
+										h2.hero__subheader Bied uw gasten snel en gratis draadloos internet
+							.hidden-xs-ts.col-ts-8.col-ts-offset-2.col-sm-5.col-sm-offset-0.col-md-4
+								+bel-mij-terug('desktop', 'vereniging')
+	.aanbod__outer
+		.container
+			.row
+				.col-xs-12
+					+aanbod
+	.bel-mij-terug--mobile__outer.hidden-sm-lg
+		.container
+			.row
+				.col-xs-12
+					+bel-mij-terug('mobile', 'vereniging')
+	.info__outer
+		.container
+			.row
+				.col-ts-6.col-md-4
+					+word-ook
+				.col-ts-6.col-md-4
+					.info.info--voordelen
+						h3.info__header
+							script.
+								var name = getParameter("company_name", window.location);
+								if (typeof name == "string" && name.length > 0 && name.length <= 28) {
+									document.write("Voordelen voor " + name);
+								} else {
+									document.write("Voordelen voor #{sportVerenigingNaam}");
+								}
+						ul.info__list
+							li.info__list__item Geen gedoe, KPN regelt alles
+							li.info__list__item Sponsorruimte op inlogportal
+							li.info__list__item Meer gastvrijheid: meer omzet
+							li.info__list__item Geen vragen over WiFi meer aan de bar
+							li.info__list__item Gratis WiFi voor iedereen
+						a.info__cta.arrow-link(href="#{overLink}") Bekijk alle voordelen
+				.col-ts-12.col-md-4
+					.info.info--risicos
+						h3.info__header Het best bewaarde clubgeheim
+						p.info__body De WiFi-code: het lijkt zo aantrekkelijk en eenvoudig, uw gasten toegang geven tot uw bestaande internetverbinding. Maar u neemt hiermee wel risico’s, die u voorkomt met KPN WiFi HotSpots.
+						a.info__cta.arrow-link(href="#{risicosLink}") Ontdek risico’s eigen WiFi
+	.citaat__outer
+		.container
+			.row
+				.col-xs-12
+					.citaat__slider
+						script.
+
+							var quotes = [];
+
+							function shuffle(o) {
+								for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+								return o;
+							}
+
+							function quote(quoteClass, quoteText, quotePortrait, quoteName, quoteRole) {
+
+								var html = "";
+
+								html += "<div class=\"citaat citaat--"+quoteClass+"\">"
+								html += "<div class=\"row\">"
+								html += "<div class=\"col-xs-6 col-xs-offset-3 hidden-ls-lg\">"
+								html += "<div class=\"citaat__portrait imgc\"><img src=\"img/"+quotePortrait+"\"></div>"
+								html += "</div>"
+								html += "<div class=\"col-xs-12 col-ls-8 col-ts-8\">"
+								html += "<div class=\"citaat__text-box__outer\">"
+								html += "<div class=\"citaat__text-box\">"
+								html += "<div class=\"citaat__text\">"+quoteText+"</div>"
+								html += "<div class=\"citaat__info citaat__info--xs\">"
+								html += "<div class=\"citaat__name\">"+quoteName+"</div>"
+								html += "<div class=\"citaat__role\">"+quoteRole+"</div>"
+								html += "</div>"
+								html += "</div>"
+								html += "</div>"
+								html += "</div>"
+								html += "<div class=\"hidden-xs col-ls-4 col-ts-4\">"
+								html += "<div class=\"citaat__portrait imgc\"><img src=\"img/"+quotePortrait+"\"></div>"
+								html += "<div class=\"citaat__info-box__outer\">"
+								html += "<div class=\"citaat__info-box\">"
+								html += "<div class=\"citaat__info citaat__info--md\">"
+								html += "<div class=\"citaat__name\">"+quoteName+"</div>"
+								html += "<div class=\"citaat__role\">"+quoteRole+"</div>"
+								html += "</div>"
+								html += "</div>"
+								html += "</div>"
+								html += "</div>"
+								html += "</div>"
+								html += "</div>"
+
+								quotes.push(html);
+
+							}
+
+							quote('excelsior', 'Voor de vaste bezoekers van onze kantine is gratis WiFi een absolute meerwaarde. Het KPN netwerk is snel en betrouwbaar en de installatie is zo geregeld.', 'circle-john-van-tilburg.jpg', 'John van Tilburg', 'Materiaal&shy;beheerder Sportclub Excelsior');
+							quote('blauw-wit', 'Het gebruik van KPN WiFi heeft onze club kansen gegeven om onze leden, gasten en vrij&shy;willigers beter te faciliteren!', 'circle-jurgen-makelaar.jpg', 'Jurgen Makelaar', 'Penningmeester Blauw&nbsp;Wit \'34');
+							quote('oranje-nassau', 'KPN WiFi HotSpots past bij het kwaliteits&shy;beeld dat onze club voor ogen heeft. Het biedt sponsoren een nieuwe advertentie&shy;mogelijkheid en bezoekers blijven door de gratis WiFi langer in de kantine.', 'circle-eric-jan-brummelhuis.jpg', 'Eric Jan Brummelhuis', 'Bestuur voetbal&shy;vereniging C.V.V. Oranje Nassau Almelo');
+							quote('reiger-boys', 'Je wilt als club alle mensen van internet voorzien maar je wilt je eigen netwerk ontlasten voor het bestuur en het secretariaat. KPN WiFi HotSpots biedt deze mogelijkheid.', 'circle-wilko-bakker.jpg', 'Wilko Bakker', 'Coördinator Sponsor&shy;commissie v.v. Reiger Boys Heerhugowaard');
+
+							quotes = shuffle(quotes);
+
+							for(var i = 0; i < quotes.length; i++) {
+								document.write(quotes[i]);
+							}
+							
+	.home-locaties__outer.hidden-xs-ls
+		.container
+			.row
+				.col-ts-12
+					+locaties-sportverenigingen
+	include _lp-footer
+
+block scripts
+	script(src="js/placeholder.js")

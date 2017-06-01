@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Neem geen risico door uw eigen WiFi-verbinding open te zetten, maar word een KPN WiFi Hotspot. Snel, betrouwbaar internet volgens de lokale en EU wetgeving.">
+    <meta name="author" content="KPN WiFi HotSpots">
+    <meta name="language" content="dutch">
+    <title>KPN WiFi HotSpots voor betrouwbaar internet zonder risico’s | KPN WiFi HotSpots</title>
+    <link rel="shortcut icon" href="img/kpn_favicon.ico">
+    <link rel="stylesheet" href="css/app.css"><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+  </head>
+  <body class="risicos">
+    <div id="cookie_warning" class="hidden">
+      <style>
+        #cookie_warning {
+           position: fixed;
+           top: 0;
+           left: 0;
+           z-index: 99999999;
+        }
+        #KPN_cookie {
+           -moz-box-sizing: border-box;
+           -webkit-box-sizing: border-box;
+           box-sizing: border-box;
+           display: block;
+           position: fixed;
+           bottom: 0;
+           top: 0;
+           left: 0;
+           right: 0;
+           background: #000;
+           background: rgba(0, 0, 0, 0.6);
+           border: none;
+           margin: 0;
+           padding: 0px;
+           z-index: 99999999;
+        }
+        
+        #KPN_cookie a {
+           color: #337ab7;
+        }
+        
+        #KPN_cookie p {
+           line-height: 1.1em;
+           font-size: 13px;
+           padding: 8px 0;
+           margin: 0;
+        }
+        
+        #KPN_cookie_wrapper {
+           position: absolute;
+           top: 8px;
+           left: 8px;
+           right: 8px;
+           margin-left: 0px;
+           background-color: #fff;
+        }
+        
+        #KPN_cookie_wrapper:after {
+           content: "";
+           clear: both;
+           visibility: hidden;
+           font-size: 0;
+           height: 0;
+           display: block;
+        }
+        
+        #KPN_cookie_header {
+           position: relative;
+           overflow: hidden;
+           height: 42px;
+        }
+        
+        #KPN_cookie_header_image {
+           display: none;
+        }
+        
+        #KPN_cookie_header_logo {
+           position: absolute;
+           top: 12px;
+           left: 12px;
+           width: 60px;
+        }
+        
+        #KPN_cookie_content_wrapper {
+           padding: 0 10px 10px 10px;
+           line-height: 1.1em;
+        }
+        
+        #KPN_cookie_text {
+           text-align: left;
+           font-size: 13px;
+           float: left;
+           color: #666;
+        }
+        
+        #KPN_cookie_text_bottom {
+           clear: both;
+           font-size: 13px;
+        }
+        
+        #KPN_cookie_text_bottom:after {
+           content: "";
+           clear: both;
+           visibility: hidden;
+           font-size: 0;
+           height: 0;
+           display: block;
+        }
+        
+        .KPN_cookie_button {
+           color: #fff;
+           white-space: nowrap;
+           text-decoration: none;
+           float: none;
+           text-align: center;
+           z-index: 99;
+           padding: 10px 0px;
+           margin: 0;
+           width: 100%;
+           height: auto;
+           cursor: pointer;
+           background-color: #0099ff;
+           border-radius: 3px;
+        }
+        
+        .KPN_cookie_button:hover {
+           color: #fff;
+           background: #0077cc;
+        }
+        
+        #KPN_cookie_text_settings {
+           float: none;
+           margin-top: 8px;
+           width: 100%;
+        }
+        
+        /* Regular mobile */
+        @media screen and (min-width: 320px) {
+           #KPN_cookie_content_wrapper {
+              line-height: 1.35em;
+           }
+        
+           #KPN_cookie p {
+              line-height: 1.35em;
+           }
+        }
+        
+        /* Flipped mobile */
+        @media screen and (max-height: 440px) {
+           #KPN_cookie_text {
+              max-height: 120px;
+              overflow: hidden;
+              overflow-y: scroll;
+           }
+        
+           #KPN_cookie_image_trimmer {
+              max-height: 160px;
+              overflow: hidden;
+           }
+        }
+        
+        @media screen and (max-height: 400px) {
+           #KPN_cookie_text {
+              max-height: 75px;
+           }
+        }
+        
+        @media screen and (max-height: 340px) {
+           #KPN_cookie_text {
+              max-height: 55px;
+           }
+        }
+        
+        /* Tablet */
+        @media screen and (min-width: 480px) {
+           #KPN_cookie_content_wrapper {
+              padding: 20px;
+           }
+        
+           #KPN_cookie_wrapper {
+              top: 16px;
+              left: 16px;
+              right: 16px;
+              margin-left: 0px;
+           }
+        
+           #KPN_cookie_header_image {
+              display: block;
+              width: 100%;
+              /*margin-top: -10%;*/
+           }
+        
+           #KPN_cookie_header_logo {
+              display: none;
+           }
+        
+           #KPN_cookie_header {
+              height: auto;
+              max-height: 120px;
+           }
+        
+           .KPN_cookie_button {
+              float: left;
+              width: 30%;
+           }
+        
+           #KPN_cookie_text_settings {
+              margin-top: 0px;
+              float: right;
+              width: 67%;
+           }
+        }
+        
+        /* Desktop */
+        @media screen and (min-width: 720px) {
+           #KPN_cookie_wrapper {
+              width: 620px;
+              left: 50%;
+              margin-left: -310px;
+           }
+        
+           #KPN_cookie_header_image {
+              /*margin-top:-90px;*/
+           }
+        }
+        
+        @media screen and (min-width: 720px) and (min-height: 500px) {
+           #KPN_cookie_wrapper {
+              top: 5%;
+           }
+        }
+        
+        @media screen and (min-width: 720px) and (min-height: 580px) {
+           #KPN_cookie_header_image {
+              margin-top: 0px;
+           }
+        
+           #KPN_cookie_header {
+              overflow: visible;
+              max-height: none;
+           }
+        
+           #KPN_cookie_wrapper {
+              top: 15%;
+           }
+        }
+        
+        /* IE8 */
+        .ie8 #KPN_cookie_wrapper {
+           top: 10%
+        }
+        
+      </style>
+      <div id="KPN_cookie">
+        <div id="KPN_cookie_wrapper">
+          <div id="KPN_cookie_header"><img id="KPN_cookie_header_image" src="img/cookie-620x120.jpg" alt="KPN optimaliseert deze website met cookies"><img id="KPN_cookie_header_logo" src="img/kpn_logo.png" alt="logo"></div>
+          <div id="KPN_cookie_content_wrapper" class="newdesign">
+            <div id="KPN_cookie_text">
+              <p><b>KPN en haar merken zijn continu bezig met het verbeteren van onze dienstverlening om je beter en persoonlijker van dienst te kunnen zijn.</b></p>
+              <p>Wij gebruiken hiervoor cookies op onze websites. Daarnaast verzamelen wij via onze websites ook andere gegevens van je, zoals je IP-adres, clickgedrag en gegevens die je zelf bij ons achterlaat. Als je klant van ons bent dan combineren wij deze gegevens met de gegevens die wij van je hebben omdat je klant van ons bent. Met je akkoord verleen je toestemming voor het optimale gebruik van cookies en voor het analyseren en combineren van je gegevens.</p>
+            </div>
+            <div id="KPN_cookie_text_bottom">
+              <div class="KPN_cookie_button KPN_cookie_personal btn-blue">Cookies accepteren</div>
+              <div id="KPN_cookie_text_settings">Lees&nbsp;<a href="cookies.html" class="KPN_cookie_click">hier</a> meer over de cookies die wij plaatsen, over&nbsp;<a href="https://www.kpn.com/algemeen/missie-en-privacy-statement.htm">ons privacybeleid</a> en over hoe je&nbsp;<a href="https://www.kpn.com/algemeen/cookies.htm" class="KPN_cookie_click">je instellingen</a> kunt aanpassen.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="masthead__outer">
+      <div class="container">
+        <div class="masthead">
+          <div class="row">
+            <div class="col-xs-12 col-sm-4">
+              <div class="masthead__branding__container"><a href="/" class="masthead__branding">
+                  <div class="masthead__logo imgch"><img src="img/kpn-logo-280x118px.png"/></div>
+                  <h1 class="masthead__site-title">KPN WiFi HotSpots</h1></a></div>
+            </div>
+            <div class="hidden-xs-ts col-sm-8">
+              <div class="main-nav">
+                <ul class="main-nav__list">
+                  <li class="main-nav__item"><a href="over-kpn-wifi-hotspots.html">Over KPN WiFi HotSpots</a></li>
+                  <li class="main-nav__item"><a href="service-en-contact.html">Service<span class="extra">&nbsp;& Contact</span></a></li>
+                  <li class="main-nav__item"><a href="bestellen.html">Bestellen</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__outer">
+      <div class="hero__visual--mobile"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-6">
+            <div class="hero">
+              <div class="hero__text">
+                <h1 class="hero__header">Neem geen risico met uw eigen WiFi.<br class="h-xs v-sm"> Kies voor KPN WiFi Hotspots.</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="article__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="article">
+              <div class="row">
+                <div class="col-xs-12 col-ts-6 col-ts-xpr">
+                  <div class="article__part">
+                    <h2 class="article__header">Risico’s van het openzetten van uw eigen WiFi-verbinding</h2>
+                    <p>Het lijkt zo aantrekkelijk, goedkoop en simpel: uw bestaande internetverbinding openzetten voor uw gasten. Maar als u uw eigen internetverbinding openzet, bent u zelf aansprakelijk voor eventueel misbruik. Daarnaast geniet u niet van de voordelen van KPN WiFi HotSpots.</p>
+                    <ul class="bullet-list">
+                      <li>U loopt het risico op afsluiting bij misbruik door één van uw gasten, zoals aangegeven staat in de Algemene Voorwaarden van uw provider;</li>
+                      <li>U dient de lokale en EU wetgeving, met betrekking tot data logging, na te volgen;</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-ts-6 col-ts-xpl">
+                  <div class="article__part">
+                    <ul class="bullet-list">
+                      <li>Het internetgebruik van uw gasten is van invloed op de performance van uw eigen privé of zakelijke internetverbinding;</li>
+                      <li>U bent als aanbieder van publiek WiFi aansprakelijk voor het internetgebruik van uw klanten (bijv. downloaden verboden sites en spam).</li>
+                    </ul>
+                    <p>Voorkom risico’s en profiteer van de voordelen als KPN WiFi HotSpot!</p><a href="bestellen.html" class="kpn-button">Bestellen KPN WiFi HotSpot</a><a href="over-kpn-wifi-hotspots.html" class="kpn-button next-to-button-link">Meer weten?</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="prefooter__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="prefooter">
+              <div class="row">
+                <div class="col-xs-12 col-ts-3">
+                  <div class="kpn-logo imgch"><a href="http://www.kpn.com/" target="_blank"><img src="img/kpn-logo-diapositief-353x160px.png"/></a></div>
+                </div>
+                <div class="hidden-xs-ls col-ts-9">
+                  <div class="secondary-nav">
+                    <ul class="secondary-nav__list">
+                      <li class="secondary-nav__item secondary-nav__item--service"><a href="service-en-contact.html"><span class="h-ts v-sm">Service & Contact</span><span class="h-xs v-ts h-sm">Service</span></a></li>
+                      <li class="secondary-nav__item"><a href="pdf/KPN-WiFi-Handleiding.pdf" target="_blank">Handleiding</a></li>
+                      <li class="secondary-nav__item"><a href="pdf/KPN-WiFi-Dienstbeschrijving.pdf" target="_blank">Dienstbeschrijving</a></li>
+                      <li class="secondary-nav__item"><a href="locaties.html"><span class="h-ts v-sm">KPN WiFi HotSpot locaties</span><span class="h-xs v-ts h-sm">Locaties</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="footer">
+              <div class="footer-nav">
+                <ul class="footer-nav__list">
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="over-kpn-wifi-hotspots.html">Over KPN WiFi HotSpots</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="service-en-contact.html">Service & Contact</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="bestellen.html">Bestellen</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="pdf/KPN-WiFi-Handleiding.pdf" target="_blank">Handleiding</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="pdf/KPN-WiFi-Dienstbeschrijving.pdf" target="_blank">Dienstbeschrijving</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="locaties.html">KPN WiFi HotSpot locaties</a></li>
+                  <li class="footer-nav__item"><a href="algemene-voorwaarden.html" target="_blank">Algemene voorwaarden</a></li>
+                  <li class="footer-nav__item"><a href="cookies.html">Cookies</a></li>
+                  <li class="footer-nav__item"><a href="pdf/KPN-Algemene-Leveringsvoorwaarden-Nederlands.pdf" target="_blank">KPN Algemene Leveringsvoorwaarden</a></li>
+                  <li class="footer-nav__item"><a href="pdf/KPN-Specifieke-Contractvoorwaarden-En-Bepalingen-Online.pdf" target="_blank">Specifieke Voorwaarden en Bepalingen</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/bootstrap-modals.min.js"></script>
+  <script src="js/neo.min.js"></script>
+  <script src="js/cookie_warning.js"></script>
+  <script src="js/contactform.js"></script>
+</html>

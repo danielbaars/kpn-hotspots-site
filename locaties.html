@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bied uw klanten extra service met snel, betrouwbaar en gratis draadloos internet met KPN WiFi Hotspots. Sluit u ook aan bij meer dan 4000 locaties.">
+    <meta name="author" content="KPN WiFi HotSpots">
+    <meta name="language" content="dutch">
+    <title>Locaties | KPN WiFi HotSpots</title>
+    <link rel="shortcut icon" href="img/kpn_favicon.ico">
+    <link rel="stylesheet" href="css/app.css"><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+  </head>
+  <body class="locaties">
+    <div id="cookie_warning" class="hidden">
+      <style>
+        #cookie_warning {
+           position: fixed;
+           top: 0;
+           left: 0;
+           z-index: 99999999;
+        }
+        #KPN_cookie {
+           -moz-box-sizing: border-box;
+           -webkit-box-sizing: border-box;
+           box-sizing: border-box;
+           display: block;
+           position: fixed;
+           bottom: 0;
+           top: 0;
+           left: 0;
+           right: 0;
+           background: #000;
+           background: rgba(0, 0, 0, 0.6);
+           border: none;
+           margin: 0;
+           padding: 0px;
+           z-index: 99999999;
+        }
+        
+        #KPN_cookie a {
+           color: #337ab7;
+        }
+        
+        #KPN_cookie p {
+           line-height: 1.1em;
+           font-size: 13px;
+           padding: 8px 0;
+           margin: 0;
+        }
+        
+        #KPN_cookie_wrapper {
+           position: absolute;
+           top: 8px;
+           left: 8px;
+           right: 8px;
+           margin-left: 0px;
+           background-color: #fff;
+        }
+        
+        #KPN_cookie_wrapper:after {
+           content: "";
+           clear: both;
+           visibility: hidden;
+           font-size: 0;
+           height: 0;
+           display: block;
+        }
+        
+        #KPN_cookie_header {
+           position: relative;
+           overflow: hidden;
+           height: 42px;
+        }
+        
+        #KPN_cookie_header_image {
+           display: none;
+        }
+        
+        #KPN_cookie_header_logo {
+           position: absolute;
+           top: 12px;
+           left: 12px;
+           width: 60px;
+        }
+        
+        #KPN_cookie_content_wrapper {
+           padding: 0 10px 10px 10px;
+           line-height: 1.1em;
+        }
+        
+        #KPN_cookie_text {
+           text-align: left;
+           font-size: 13px;
+           float: left;
+           color: #666;
+        }
+        
+        #KPN_cookie_text_bottom {
+           clear: both;
+           font-size: 13px;
+        }
+        
+        #KPN_cookie_text_bottom:after {
+           content: "";
+           clear: both;
+           visibility: hidden;
+           font-size: 0;
+           height: 0;
+           display: block;
+        }
+        
+        .KPN_cookie_button {
+           color: #fff;
+           white-space: nowrap;
+           text-decoration: none;
+           float: none;
+           text-align: center;
+           z-index: 99;
+           padding: 10px 0px;
+           margin: 0;
+           width: 100%;
+           height: auto;
+           cursor: pointer;
+           background-color: #0099ff;
+           border-radius: 3px;
+        }
+        
+        .KPN_cookie_button:hover {
+           color: #fff;
+           background: #0077cc;
+        }
+        
+        #KPN_cookie_text_settings {
+           float: none;
+           margin-top: 8px;
+           width: 100%;
+        }
+        
+        /* Regular mobile */
+        @media screen and (min-width: 320px) {
+           #KPN_cookie_content_wrapper {
+              line-height: 1.35em;
+           }
+        
+           #KPN_cookie p {
+              line-height: 1.35em;
+           }
+        }
+        
+        /* Flipped mobile */
+        @media screen and (max-height: 440px) {
+           #KPN_cookie_text {
+              max-height: 120px;
+              overflow: hidden;
+              overflow-y: scroll;
+           }
+        
+           #KPN_cookie_image_trimmer {
+              max-height: 160px;
+              overflow: hidden;
+           }
+        }
+        
+        @media screen and (max-height: 400px) {
+           #KPN_cookie_text {
+              max-height: 75px;
+           }
+        }
+        
+        @media screen and (max-height: 340px) {
+           #KPN_cookie_text {
+              max-height: 55px;
+           }
+        }
+        
+        /* Tablet */
+        @media screen and (min-width: 480px) {
+           #KPN_cookie_content_wrapper {
+              padding: 20px;
+           }
+        
+           #KPN_cookie_wrapper {
+              top: 16px;
+              left: 16px;
+              right: 16px;
+              margin-left: 0px;
+           }
+        
+           #KPN_cookie_header_image {
+              display: block;
+              width: 100%;
+              /*margin-top: -10%;*/
+           }
+        
+           #KPN_cookie_header_logo {
+              display: none;
+           }
+        
+           #KPN_cookie_header {
+              height: auto;
+              max-height: 120px;
+           }
+        
+           .KPN_cookie_button {
+              float: left;
+              width: 30%;
+           }
+        
+           #KPN_cookie_text_settings {
+              margin-top: 0px;
+              float: right;
+              width: 67%;
+           }
+        }
+        
+        /* Desktop */
+        @media screen and (min-width: 720px) {
+           #KPN_cookie_wrapper {
+              width: 620px;
+              left: 50%;
+              margin-left: -310px;
+           }
+        
+           #KPN_cookie_header_image {
+              /*margin-top:-90px;*/
+           }
+        }
+        
+        @media screen and (min-width: 720px) and (min-height: 500px) {
+           #KPN_cookie_wrapper {
+              top: 5%;
+           }
+        }
+        
+        @media screen and (min-width: 720px) and (min-height: 580px) {
+           #KPN_cookie_header_image {
+              margin-top: 0px;
+           }
+        
+           #KPN_cookie_header {
+              overflow: visible;
+              max-height: none;
+           }
+        
+           #KPN_cookie_wrapper {
+              top: 15%;
+           }
+        }
+        
+        /* IE8 */
+        .ie8 #KPN_cookie_wrapper {
+           top: 10%
+        }
+        
+      </style>
+      <div id="KPN_cookie">
+        <div id="KPN_cookie_wrapper">
+          <div id="KPN_cookie_header"><img id="KPN_cookie_header_image" src="img/cookie-620x120.jpg" alt="KPN optimaliseert deze website met cookies"><img id="KPN_cookie_header_logo" src="img/kpn_logo.png" alt="logo"></div>
+          <div id="KPN_cookie_content_wrapper" class="newdesign">
+            <div id="KPN_cookie_text">
+              <p><b>KPN en haar merken zijn continu bezig met het verbeteren van onze dienstverlening om je beter en persoonlijker van dienst te kunnen zijn.</b></p>
+              <p>Wij gebruiken hiervoor cookies op onze websites. Daarnaast verzamelen wij via onze websites ook andere gegevens van je, zoals je IP-adres, clickgedrag en gegevens die je zelf bij ons achterlaat. Als je klant van ons bent dan combineren wij deze gegevens met de gegevens die wij van je hebben omdat je klant van ons bent. Met je akkoord verleen je toestemming voor het optimale gebruik van cookies en voor het analyseren en combineren van je gegevens.</p>
+            </div>
+            <div id="KPN_cookie_text_bottom">
+              <div class="KPN_cookie_button KPN_cookie_personal btn-blue">Cookies accepteren</div>
+              <div id="KPN_cookie_text_settings">Lees&nbsp;<a href="cookies.html" class="KPN_cookie_click">hier</a> meer over de cookies die wij plaatsen, over&nbsp;<a href="https://www.kpn.com/algemeen/missie-en-privacy-statement.htm">ons privacybeleid</a> en over hoe je&nbsp;<a href="https://www.kpn.com/algemeen/cookies.htm" class="KPN_cookie_click">je instellingen</a> kunt aanpassen.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="masthead__outer">
+      <div class="container">
+        <div class="masthead">
+          <div class="row">
+            <div class="col-xs-12 col-sm-4">
+              <div class="masthead__branding__container"><a href="/" class="masthead__branding">
+                  <div class="masthead__logo imgch"><img src="img/kpn-logo-280x118px.png"/></div>
+                  <h1 class="masthead__site-title">KPN WiFi HotSpots</h1></a></div>
+            </div>
+            <div class="hidden-xs-ts col-sm-8">
+              <div class="main-nav">
+                <ul class="main-nav__list">
+                  <li class="main-nav__item"><a href="over-kpn-wifi-hotspots.html">Over KPN WiFi HotSpots</a></li>
+                  <li class="main-nav__item"><a href="service-en-contact.html">Service<span class="extra">&nbsp;& Contact</span></a></li>
+                  <li class="main-nav__item"><a href="bestellen.html">Bestellen</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__outer">
+      <div class="hero__visual--mobile"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-6">
+            <div class="hero">
+              <div class="hero__text">
+                <h1 class="hero__header">Al meer dan 4000 KPN WiFi HotSpot locaties. Sluit u ook aan.</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="logos__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="logos">
+              <h2 class="article__header logos__header">Een overzicht van enkele van onze partners:</h2>
+              <div class="row">
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--albertheijn">
+                  <div class="logos__visual imgc logos__visual--albertheijn"><img src="img/albert-heijn-logo-280x298px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--basicfit">
+                  <div class="logos__visual imgc logos__visual--basicfit"><img src="img/basic-fit-logo-240x240px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--shell">
+                  <div class="logos__visual imgc logos__visual--shell"><img src="img/shell-logo-374x409px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--ns">
+                  <div class="logos__visual imgc logos__visual--ns"><img src="img/ns-logo-291x173px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--centerparcs">
+                  <div class="logos__visual imgc logos__visual--centerparcs"><img src="img/center-parcs-logo-200x157px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--vandervalk">
+                  <div class="logos__visual imgc logos__visual--vandervalk"><img src="img/van-der-valk-logo-350x204px.gif"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--vu">
+                  <div class="logos__visual imgc logos__visual--vu"><img src="img/vu-logo-350x350px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--karwei">
+                  <div class="logos__visual imgc logos__visual--karwei"><img src="img/karwei-logo-335x279px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--jumbo">
+                  <div class="logos__visual imgc logos__visual--jumbo"><img src="img/jumbo-logo-800x223px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--healthcity">
+                  <div class="logos__visual imgc logos__visual--healthcity"><img src="img/healthcity-logo-400x80px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--texaco">
+                  <div class="logos__visual imgc logos__visual--texaco"><img src="img/texaco-logo-120x120px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--jaarbeursutrecht">
+                  <div class="logos__visual imgc logos__visual--jaarbeursutrecht"><img src="img/jaarbeurs-utrecht-logo-400x101px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--landal">
+                  <div class="logos__visual imgc logos__visual--landal"><img src="img/Landal-Greenparks-Logo-300x298px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--fletcher">
+                  <div class="logos__visual imgc logos__visual--fletcher"><img src="img/fletcher-hotels-logo-416x59px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--laplace">
+                  <div class="logos__visual imgc logos__visual--laplace"><img src="img/la-place-logo-300x281px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--gamma">
+                  <div class="logos__visual imgc logos__visual--gamma"><img src="img/gamma-logo-421x184px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--emte">
+                  <div class="logos__visual imgc logos__visual--emte"><img src="img/emte-supermarkten-logo-200x129px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--delifrance">
+                  <div class="logos__visual imgc logos__visual--delifrance"><img src="img/delifrance-logo-190x190px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--thesting">
+                  <div class="logos__visual imgc logos__visual--thesting"><img src="img/the-sting-logo-black-and-white-300x50px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--tauro">
+                  <div class="logos__visual imgc logos__visual--tauro"><img src="img/tauro-logouare-789x213px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--molecaten">
+                  <div class="logos__visual imgc logos__visual--molecaten"><img src="img/molecaten-logo-200x130px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--carlton">
+                  <div class="logos__visual imgc logos__visual--carlton"><img src="img/carlton-hotel-collection-logo-200x200px.gif"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--abrona">
+                  <div class="logos__visual imgc logos__visual--abrona"><img src="img/abrona-logo-216x92px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--sligro">
+                  <div class="logos__visual imgc logos__visual--sligro"><img src="img/sligro-logo-220x120px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--deen">
+                  <div class="logos__visual imgc logos__visual--deen"><img src="img/deen-supermarkten-logo-204x119px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--laco">
+                  <div class="logos__visual imgc logos__visual--laco"><img src="img/laco-logo-151x95px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--carglass">
+                  <div class="logos__visual imgc logos__visual--carglass"><img src="img/carglass-logo-200x200px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--aristo">
+                  <div class="logos__visual imgc logos__visual--aristo"><img src="img/aristo-logo-120x109px.gif"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--roompot">
+                  <div class="logos__visual imgc logos__visual--roompot"><img src="img/roompot-logo-489x489px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--campanile">
+                  <div class="logos__visual imgc logos__visual--campanile"><img src="img/campanile-logo-389x129px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--unive">
+                  <div class="logos__visual imgc logos__visual--unive"><img src="img/unive-verzekeringen-210x70px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--makro">
+                  <div class="logos__visual imgc logos__visual--makro"><img src="img/makro-logo-208x89px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--coop">
+                  <div class="logos__visual imgc logos__visual--coop"><img src="img/coop-logo-136x60px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--ac">
+                  <div class="logos__visual imgc logos__visual--ac"><img src="img/ac-restaurants-hotels-logo-196x115px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--total">
+                  <div class="logos__visual imgc logos__visual--total"><img src="img/total-logo-176x176px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--kroonenberg">
+                  <div class="logos__visual imgc logos__visual--kroonenberg"><img src="img/kroonenberg-groep-logo-203x52px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--amrath">
+                  <div class="logos__visual imgc logos__visual--amrath"><img src="img/amrath-logo-248x195px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--vluchtelingenwerk">
+                  <div class="logos__visual imgc logos__visual--vluchtelingenwerk"><img src="img/vluchtelingenwerk-nederland-logo-174x116px.png"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--kwikfit">
+                  <div class="logos__visual imgc logos__visual--kwikfit"><img src="img/kwikfit-logo-450x159px.jpg"></div>
+                </div>
+                <div class="col-xs-6 col-ts-4 col-sm-3 col-md-one-fifth logo-col--libema">
+                  <div class="logos__visual imgc logos__visual--libema"><img src="img/libema-logo-254x174px.jpg"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="locatie-zoeker__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="locatie-zoeker">
+              <h2 class="article__header locatie-zoeker__header">Vind HotSpots bij u in de buurt:</h2>
+              <div class="locatie-zoeker__visual imgc"><a href="https://www.kpn.com/prive/mobiel-internet/hotspots-hoofd-nl/hotspots-locaties.htm" target="_blank"><img src="img/knp-wifi-hotspots-locaties-google-maps-screenshot-v2.jpg"></a></div><a href="https://www.kpn.com/prive/mobiel-internet/hotspots-hoofd-nl/hotspots-locaties.htm" target="_blank" class="kpn-button">Vind een locatie</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="prefooter__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="prefooter">
+              <div class="row">
+                <div class="col-xs-12 col-ts-3">
+                  <div class="kpn-logo imgch"><a href="http://www.kpn.com/" target="_blank"><img src="img/kpn-logo-diapositief-353x160px.png"/></a></div>
+                </div>
+                <div class="hidden-xs-ls col-ts-9">
+                  <div class="secondary-nav">
+                    <ul class="secondary-nav__list">
+                      <li class="secondary-nav__item secondary-nav__item--service"><a href="service-en-contact.html"><span class="h-ts v-sm">Service & Contact</span><span class="h-xs v-ts h-sm">Service</span></a></li>
+                      <li class="secondary-nav__item"><a href="pdf/KPN-WiFi-Handleiding.pdf" target="_blank">Handleiding</a></li>
+                      <li class="secondary-nav__item"><a href="pdf/KPN-WiFi-Dienstbeschrijving.pdf" target="_blank">Dienstbeschrijving</a></li>
+                      <li class="secondary-nav__item"><a href="locaties.html"><span class="h-ts v-sm">KPN WiFi HotSpot locaties</span><span class="h-xs v-ts h-sm">Locaties</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="footer">
+              <div class="footer-nav">
+                <ul class="footer-nav__list">
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="over-kpn-wifi-hotspots.html">Over KPN WiFi HotSpots</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="service-en-contact.html">Service & Contact</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="bestellen.html">Bestellen</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="pdf/KPN-WiFi-Handleiding.pdf" target="_blank">Handleiding</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="pdf/KPN-WiFi-Dienstbeschrijving.pdf" target="_blank">Dienstbeschrijving</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="locaties.html">KPN WiFi HotSpot locaties</a></li>
+                  <li class="footer-nav__item"><a href="algemene-voorwaarden.html" target="_blank">Algemene voorwaarden</a></li>
+                  <li class="footer-nav__item"><a href="cookies.html">Cookies</a></li>
+                  <li class="footer-nav__item"><a href="pdf/KPN-Algemene-Leveringsvoorwaarden-Nederlands.pdf" target="_blank">KPN Algemene Leveringsvoorwaarden</a></li>
+                  <li class="footer-nav__item"><a href="pdf/KPN-Specifieke-Contractvoorwaarden-En-Bepalingen-Online.pdf" target="_blank">Specifieke Voorwaarden en Bepalingen</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/bootstrap-modals.min.js"></script>
+  <script src="js/neo.min.js"></script>
+  <script src="js/cookie_warning.js"></script>
+  <script src="js/contactform.js"></script>
+</html>

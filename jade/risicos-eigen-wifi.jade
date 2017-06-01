@@ -1,0 +1,39 @@
+extends default
+block head
+	- var devVersion = true
+	- var version = 1
+	- var pageTitle = 'KPN WiFi HotSpots voor betrouwbaar internet zonder risico\’s'
+	- var metaDescription = 'Neem geen risico door uw eigen WiFi-verbinding open te zetten, maar word een KPN WiFi Hotspot. Snel, betrouwbaar internet volgens de lokale en EU wetgeving.'
+	- var bodyClass = 'risicos'
+block content
+	include _masthead
+	.hero__outer
+		.hero__visual--mobile
+		.container
+			.row
+				.col-xs-12.col-sm-8.col-md-6
+					.hero
+						.hero__text
+							h1.hero__header Neem geen risico met uw eigen WiFi.#[br.h-xs.v-sm] Kies voor KPN WiFi Hotspots.
+	.article__outer
+		.container
+			.row
+				.col-xs-12
+					.article
+						.row
+							.col-xs-12.col-ts-6.col-ts-xpr
+								.article__part
+									h2.article__header Risico’s van het openzetten van uw eigen WiFi-verbinding
+									p Het lijkt zo aantrekkelijk, goedkoop en simpel: uw bestaande internetverbinding openzetten voor uw gasten. Maar als u uw eigen internetverbinding openzet, bent u zelf aansprakelijk voor eventueel misbruik. Daarnaast geniet u niet van de voordelen van KPN WiFi HotSpots.
+									ul.bullet-list
+										li U loopt het risico op afsluiting bij misbruik door één van uw gasten, zoals aangegeven staat in de Algemene Voorwaarden van uw provider;
+										li U dient de lokale en EU wetgeving, met betrekking tot data logging, na te volgen;
+							.col-xs-12.col-ts-6.col-ts-xpl
+								.article__part
+									ul.bullet-list
+										li Het internetgebruik van uw gasten is van invloed op de performance van uw eigen privé of zakelijke internetverbinding;
+										li U bent als aanbieder van publiek WiFi aansprakelijk voor het internetgebruik van uw klanten (bijv. downloaden verboden sites en spam).
+									p Voorkom risico’s en profiteer van de voordelen als KPN WiFi HotSpot!
+									a.kpn-button(href="#{bestellenLink}") Bestellen KPN WiFi HotSpot
+									a.kpn-button.next-to-button-link(href="#{overLink}") Meer weten?
+	include _footer

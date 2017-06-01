@@ -1,0 +1,24 @@
+mixin bel-mij-terug(classModifier, businessType)
+	.bel-mij-terug(class='bel-mij-terug--#{classModifier}')
+		h3.bel-mij-terug__header Ik wil meer informatie
+		p.bel-mij-terug__body We helpen u graag. Bel ons op #[a(href='tel:08000414').phone-number 0800 0414]. Of vul uw gegevens in, dan bellen we u binnen twee werkdagen terug.
+		form.bel-mij-terug__form(data-tip="{ 'fields': [ 'name', 'company', 'phone_number', 'email', 'g-recaptcha-response', 'business-type' ], 'url': 'email/return_call.php', 'function': 'return_call' }" data-form="0")
+			.form-group.bel-mij-terug__naam
+				label Naam
+				input.form-control(type='text', placeholder='Naam' name='name' data-error='#{errorNaam}' required)
+			.form-group.bel-mij-terug__bedrijf
+				label Bedrijf
+				if businessType == 'vereniging'
+					input.form-control(type='text', placeholder='Vereniging' name='company' data-error='#{errorBedrijf}' required)						
+				else
+					input.form-control(type='text', placeholder='Bedrijf' name='company' data-error='#{errorBedrijf}' required)
+			.form-group.bel-mij-terug__telefoon
+				label Telefoon
+				input.form-control(type='tel', placeholder='Telefoonnummer' name='phone_number' data-error='#{errorTelefoonnummer}' required)
+			.form-group.bel-mij-terug__email
+				label E-mail
+				input.form-control(type='email', placeholder='E-mailadres' name='email' data-error='#{errorEmail}' required)
+			input(type="hidden" name="g-recaptcha-response")
+			input(type="hidden" name="business-type" value="#{businessType}")
+			button(type='submit').bel-mij-terug__cta.kpn-button Bel mij terug
+			include _captcha_modal

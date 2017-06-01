@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bied uw klanten extra service met gratis internet van KPN WiFi Hotspots. Zonder gedoe, met meertalige helpdesk en nu met gratis apparatuur en installatie.">
+    <meta name="author" content="KPN WiFi HotSpots">
+    <meta name="language" content="dutch">
+    <title>KPN WiFi HotSpots voor gratis internet zonder gedoe | KPN WiFi HotSpots</title>
+    <link rel="shortcut icon" href="img/kpn_favicon.ico">
+    <link rel="stylesheet" href="css/app.css"><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+  </head>
+  <body class="over">
+    <div id="cookie_warning" class="hidden">
+      <style>
+        #cookie_warning {
+           position: fixed;
+           top: 0;
+           left: 0;
+           z-index: 99999999;
+        }
+        #KPN_cookie {
+           -moz-box-sizing: border-box;
+           -webkit-box-sizing: border-box;
+           box-sizing: border-box;
+           display: block;
+           position: fixed;
+           bottom: 0;
+           top: 0;
+           left: 0;
+           right: 0;
+           background: #000;
+           background: rgba(0, 0, 0, 0.6);
+           border: none;
+           margin: 0;
+           padding: 0px;
+           z-index: 99999999;
+        }
+        
+        #KPN_cookie a {
+           color: #337ab7;
+        }
+        
+        #KPN_cookie p {
+           line-height: 1.1em;
+           font-size: 13px;
+           padding: 8px 0;
+           margin: 0;
+        }
+        
+        #KPN_cookie_wrapper {
+           position: absolute;
+           top: 8px;
+           left: 8px;
+           right: 8px;
+           margin-left: 0px;
+           background-color: #fff;
+        }
+        
+        #KPN_cookie_wrapper:after {
+           content: "";
+           clear: both;
+           visibility: hidden;
+           font-size: 0;
+           height: 0;
+           display: block;
+        }
+        
+        #KPN_cookie_header {
+           position: relative;
+           overflow: hidden;
+           height: 42px;
+        }
+        
+        #KPN_cookie_header_image {
+           display: none;
+        }
+        
+        #KPN_cookie_header_logo {
+           position: absolute;
+           top: 12px;
+           left: 12px;
+           width: 60px;
+        }
+        
+        #KPN_cookie_content_wrapper {
+           padding: 0 10px 10px 10px;
+           line-height: 1.1em;
+        }
+        
+        #KPN_cookie_text {
+           text-align: left;
+           font-size: 13px;
+           float: left;
+           color: #666;
+        }
+        
+        #KPN_cookie_text_bottom {
+           clear: both;
+           font-size: 13px;
+        }
+        
+        #KPN_cookie_text_bottom:after {
+           content: "";
+           clear: both;
+           visibility: hidden;
+           font-size: 0;
+           height: 0;
+           display: block;
+        }
+        
+        .KPN_cookie_button {
+           color: #fff;
+           white-space: nowrap;
+           text-decoration: none;
+           float: none;
+           text-align: center;
+           z-index: 99;
+           padding: 10px 0px;
+           margin: 0;
+           width: 100%;
+           height: auto;
+           cursor: pointer;
+           background-color: #0099ff;
+           border-radius: 3px;
+        }
+        
+        .KPN_cookie_button:hover {
+           color: #fff;
+           background: #0077cc;
+        }
+        
+        #KPN_cookie_text_settings {
+           float: none;
+           margin-top: 8px;
+           width: 100%;
+        }
+        
+        /* Regular mobile */
+        @media screen and (min-width: 320px) {
+           #KPN_cookie_content_wrapper {
+              line-height: 1.35em;
+           }
+        
+           #KPN_cookie p {
+              line-height: 1.35em;
+           }
+        }
+        
+        /* Flipped mobile */
+        @media screen and (max-height: 440px) {
+           #KPN_cookie_text {
+              max-height: 120px;
+              overflow: hidden;
+              overflow-y: scroll;
+           }
+        
+           #KPN_cookie_image_trimmer {
+              max-height: 160px;
+              overflow: hidden;
+           }
+        }
+        
+        @media screen and (max-height: 400px) {
+           #KPN_cookie_text {
+              max-height: 75px;
+           }
+        }
+        
+        @media screen and (max-height: 340px) {
+           #KPN_cookie_text {
+              max-height: 55px;
+           }
+        }
+        
+        /* Tablet */
+        @media screen and (min-width: 480px) {
+           #KPN_cookie_content_wrapper {
+              padding: 20px;
+           }
+        
+           #KPN_cookie_wrapper {
+              top: 16px;
+              left: 16px;
+              right: 16px;
+              margin-left: 0px;
+           }
+        
+           #KPN_cookie_header_image {
+              display: block;
+              width: 100%;
+              /*margin-top: -10%;*/
+           }
+        
+           #KPN_cookie_header_logo {
+              display: none;
+           }
+        
+           #KPN_cookie_header {
+              height: auto;
+              max-height: 120px;
+           }
+        
+           .KPN_cookie_button {
+              float: left;
+              width: 30%;
+           }
+        
+           #KPN_cookie_text_settings {
+              margin-top: 0px;
+              float: right;
+              width: 67%;
+           }
+        }
+        
+        /* Desktop */
+        @media screen and (min-width: 720px) {
+           #KPN_cookie_wrapper {
+              width: 620px;
+              left: 50%;
+              margin-left: -310px;
+           }
+        
+           #KPN_cookie_header_image {
+              /*margin-top:-90px;*/
+           }
+        }
+        
+        @media screen and (min-width: 720px) and (min-height: 500px) {
+           #KPN_cookie_wrapper {
+              top: 5%;
+           }
+        }
+        
+        @media screen and (min-width: 720px) and (min-height: 580px) {
+           #KPN_cookie_header_image {
+              margin-top: 0px;
+           }
+        
+           #KPN_cookie_header {
+              overflow: visible;
+              max-height: none;
+           }
+        
+           #KPN_cookie_wrapper {
+              top: 15%;
+           }
+        }
+        
+        /* IE8 */
+        .ie8 #KPN_cookie_wrapper {
+           top: 10%
+        }
+        
+      </style>
+      <div id="KPN_cookie">
+        <div id="KPN_cookie_wrapper">
+          <div id="KPN_cookie_header"><img id="KPN_cookie_header_image" src="img/cookie-620x120.jpg" alt="KPN optimaliseert deze website met cookies"><img id="KPN_cookie_header_logo" src="img/kpn_logo.png" alt="logo"></div>
+          <div id="KPN_cookie_content_wrapper" class="newdesign">
+            <div id="KPN_cookie_text">
+              <p><b>KPN en haar merken zijn continu bezig met het verbeteren van onze dienstverlening om je beter en persoonlijker van dienst te kunnen zijn.</b></p>
+              <p>Wij gebruiken hiervoor cookies op onze websites. Daarnaast verzamelen wij via onze websites ook andere gegevens van je, zoals je IP-adres, clickgedrag en gegevens die je zelf bij ons achterlaat. Als je klant van ons bent dan combineren wij deze gegevens met de gegevens die wij van je hebben omdat je klant van ons bent. Met je akkoord verleen je toestemming voor het optimale gebruik van cookies en voor het analyseren en combineren van je gegevens.</p>
+            </div>
+            <div id="KPN_cookie_text_bottom">
+              <div class="KPN_cookie_button KPN_cookie_personal btn-blue">Cookies accepteren</div>
+              <div id="KPN_cookie_text_settings">Lees&nbsp;<a href="cookies.html" class="KPN_cookie_click">hier</a> meer over de cookies die wij plaatsen, over&nbsp;<a href="https://www.kpn.com/algemeen/missie-en-privacy-statement.htm">ons privacybeleid</a> en over hoe je&nbsp;<a href="https://www.kpn.com/algemeen/cookies.htm" class="KPN_cookie_click">je instellingen</a> kunt aanpassen.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="masthead__outer">
+      <div class="container">
+        <div class="masthead">
+          <div class="row">
+            <div class="col-xs-12 col-sm-4">
+              <div class="masthead__branding__container"><a href="/" class="masthead__branding">
+                  <div class="masthead__logo imgch"><img src="img/kpn-logo-280x118px.png"/></div>
+                  <h1 class="masthead__site-title">KPN WiFi HotSpots</h1></a></div>
+            </div>
+            <div class="hidden-xs-ts col-sm-8">
+              <div class="main-nav">
+                <ul class="main-nav__list">
+                  <li class="main-nav__item"><a href="over-kpn-wifi-hotspots.html">Over KPN WiFi HotSpots</a></li>
+                  <li class="main-nav__item"><a href="service-en-contact.html">Service<span class="extra">&nbsp;& Contact</span></a></li>
+                  <li class="main-nav__item"><a href="bestellen.html">Bestellen</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__outer">
+      <div class="hero__visual--mobile"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-6">
+            <div class="hero">
+              <div class="hero__text">
+                <h1 class="hero__header">Wat zijn KPN WiFi HotSpots?</h1>
+                <p class="hero__intro">Tegenwoordig is WiFi één van de meest onmisbare diensten op publiek toegankelijke plaatsen. We willen overal bereikbaar zijn, en bereikbaar blijven. </p>
+                <p class="hero__intro">Als KPN WiFi HotSpot biedt u uw gasten snel, betrouwbaar en gratis draadloos internet (WiFi). Uw gasten internetten op dezelfde manier als thuis of op hun werk. In onze <a href="pdf/KPN-WiFi-Dienstbeschrijving.pdf">Dienstbeschrijving (pdf)</a> leggen we alles uit over deze dienst.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="article__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="article">
+              <div class="article__part">
+                <h2 class="article__header">Alle voordelen</h2>
+                <p class="article__intro">WiFi HotSpots van KPN bieden vele voordelen. Voor u, maar zeker ook voor uw gasten.</p>
+                <ul class="bullet-list h-ts">
+                  <li><a href="#snel">Snel draadloos internet</a></li>
+                  <li><a href="#veilig">Veilig en betrouwbaar</a></li>
+                  <li><a href="#business-modellen">Business modellen</a></li>
+                  <li><a href="#helpdesk">Meertalige helpdesk 24/7</a></li>
+                  <li><a href="#advertentiemogelijkheden">Advertentiemogelijkheden</a></li>
+                  <li><a href="#huisstijl">Inlogpagina in eigen stijl</a></li>
+                  <li><a href="#wettelijke-eisen">Wettelijke eisen</a></li>
+                  <li><a href="#marketingmateriaal">Gratis marketingmateriaal</a></li>
+                  <li><a href="#social-login">Social login (optioneel)</a></li>
+                  <li><a href="#multiservice">Multiservice WiFi (optioneel)</a></li>
+                  <li><a href="#mijn">Mijn HotSpots van KPN</a></li>
+                  <li><a href="#kpn-fon">KPN Fon</a></li>
+                  <li><a href="#hervatten">Sessie hervatten</a></li>
+                  <li><a href="#bandbreedtemanagement">Bandbreedtemanagement</a></li>
+                  <li><a href="#apparatuur">Professionele apparatuur</a></li>
+                </ul>
+                <div class="article__nav h-xs v-ts h-md">
+                  <div class="row">
+                    <div class="col-xs-12 col-ts-6">
+                      <ul class="article__nav__column">
+                        <li class="article__nav__item"><a href="#snel">Snel draadloos internet</a></li>
+                        <li class="article__nav__item"><a href="#veilig">Veilig en betrouwbaar</a></li>
+                        <li class="article__nav__item"><a href="#business-modellen">Business modellen</a></li>
+                        <li class="article__nav__item"><a href="#helpdesk">Meertalige helpdesk 24/7</a></li>
+                        <li class="article__nav__item"><a href="#advertentiemogelijkheden">Advertentiemogelijkheden</a></li>
+                        <li class="article__nav__item"><a href="#huisstijl">Inlogpagina in eigen stijl</a></li>
+                        <li class="article__nav__item"><a href="#wettelijke-eisen">Wettelijke eisen</a></li>
+                        <li class="article__nav__item"><a href="#marketingmateriaal">Gratis marketingmateriaal</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-xs-12 col-ts-6">
+                      <ul class="article__nav__column">
+                        <li class="article__nav__item"><a href="#social-login">Social login (optioneel)</a></li>
+                        <li class="article__nav__item"><a href="#multiservice">Multiservice WiFi (optioneel)</a></li>
+                        <li class="article__nav__item"><a href="#mijn">Mijn HotSpots van KPN</a></li>
+                        <li class="article__nav__item"><a href="#kpn-fon">KPN Fon</a></li>
+                        <li class="article__nav__item"><a href="#hervatten">Sessie hervatten</a></li>
+                        <li class="article__nav__item"><a href="#bandbreedtemanagement">Bandbreedtemanagement</a></li>
+                        <li class="article__nav__item"><a href="#apparatuur">Professionele apparatuur</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="article__nav h-xs v-md">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                      <ul class="article__nav__column">
+                        <li class="article__nav__item"><a href="#snel">Snel draadloos internet</a></li>
+                        <li class="article__nav__item"><a href="#veilig">Veilig en betrouwbaar</a></li>
+                        <li class="article__nav__item"><a href="#business-modellen">Business modellen</a></li>
+                        <li class="article__nav__item"><a href="#helpdesk">Meertalige helpdesk 24/7</a></li>
+                        <li class="article__nav__item"><a href="#advertentiemogelijkheden">Advertentiemogelijkheden</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                      <ul class="article__nav__column">
+                        <li class="article__nav__item"><a href="#huisstijl">Inlogpagina in eigen stijl</a></li>
+                        <li class="article__nav__item"><a href="#wettelijke-eisen">Wettelijke eisen</a></li>
+                        <li class="article__nav__item"><a href="#marketingmateriaal">Gratis marketingmateriaal</a></li>
+                        <li class="article__nav__item"><a href="#social-login">Social login (optioneel)</a></li>
+                        <li class="article__nav__item"><a href="#multiservice">Multiservice WiFi (optioneel)</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                      <ul class="article__nav__column">
+                        <li class="article__nav__item"><a href="#mijn">Mijn HotSpots van KPN</a></li>
+                        <li class="article__nav__item"><a href="#kpn-fon">KPN Fon</a></li>
+                        <li class="article__nav__item"><a href="#hervatten">Sessie hervatten</a></li>
+                        <li class="article__nav__item"><a href="#bandbreedtemanagement">Bandbreedtemanagement</a></li>
+                        <li class="article__nav__item"><a href="#apparatuur">Professionele apparatuur</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-ts-6 col-ts-xpr">
+                  <div class="article__part">
+                    <h3 id="snel" class="article__subheader">Snel draadloos internet</h3>
+                    <p>Uw gasten kunnen draadloos internetten zoals ze gewend zijn thuis of op het werk. Gasten blijven op deze manier langer, of komen sneller bij u terug.</p>
+                    <h3 id="veilig" class="article__subheader">Veilig en betrouwbaar</h3>
+                    <p>De premium WiFi dienstverlening van KPN biedt een veilige en betrouwbare dienst die u uw gasten aanbiedt; het internetverkeer wordt bij KPN WiFi HotSpots, ten opzichte van een eigen WiFi internet aanbod, anders afgehandeld: publiek verkeer wordt via een apart netwerk behandeld en niet gecombineerd met het internetverkeer op uw bedrijfsaansluiting. Verder zijn alle handelingen op de portal (zowel het inloggen als betalen) https-beveiligd. Inkomend verkeer naar apparaten van de gasten (van buitenaf geïnitieerd) wordt niet toegestaan door KPN WiFi HotSpots. Bovendien laat KPN WiFi HotSpots regelmatig audits uitvoeren om de veiligheid van de portal op een hoog niveau te houden. </p>
+                    <h3 id="business-modellen" class="article__subheader">Business modellen</h3>
+                    <p>Als locatiehouder heeft u de keus uit vier Business modellen, namelijk;</p>
+                    <h4 class="article__subsubheader">1. Gratis premium internet</h4>
+                    <p>Het liefst willen uw gasten gratis gebruik maken van het internet. Dit is mogelijk met de dienst KPN WiFi gratis premium internet.</p>
+                    <p>Met gratis premium internet koopt u voor een vast bedrag per maand de complete onbeperkte dienst in, waarmee u verzekerd bent van een goede internetverbinding voor al uw gasten.</p>
+                    <h4 class="article__subsubheader">2. Gratis premium internet 2.0</h4>
+                    <p>Bij gratis premium internet 2.0 krijgt de klant een code van u als locatiehouder. Op deze manier kan niet iedereen inloggen op het netwerk, maar slechts de personen waar van u de toegang tot verstrekt of die online een tegoed hebben aangeschaft.</p>
+                    <h4 class="article__subsubheader">3. Hybride internet</h4>
+                    <p>Hybride internet is een combinatie van Gratis basisdienst en Premium Betaald internet.</p>
+                    <p>Bij Hybride internet kunt u als locatiehouder ervoor kiezen om uw klanten een bepaald aantal minuten gratis internet aan te bieden of de dienst te beperken tot een bepaalde performance. Naast deze gratis minuten kunnen uw klanten ervoor kiezen om te betalen voor de onbeperkte dienst. Dit gaat op dezelfde manier als bij de betaalde versie.</p>
+                    <h4 class="article__subsubheader">4. Premium Betaald internet</h4>
+                    <p>Bij Premium Betaald internet biedt u uw klanten WiFi aan onder andere door middel van betaalde vouchers.</p>
+                    <p>Betalen is ook online mogelijk via Creditcard, iDEAL, Paypal of door het afsluiten van een abonnement.</p>
+                    <h3 id="helpdesk" class="article__subheader">Meertalige helpdesk 24/7</h3>
+                    <p>U en uw gasten hebben 24 uur per dag, 7 dagen per week toegang tot onze meertalige helpdesk. Onze helpdesk is ook internationaal te bereiken via gratis nummers.</p>
+                    <h3 id="advertentiemogelijkheden" class="article__subheader">Advertentiemogelijkheden</h3>
+                    <p>Op uw ‘eigen’ portal is advertentieruimte beschikbaar. Deze ruimte kan door u ingezet worden voor promotie van uw organisatie of externe partijen. U levert de gewenste informatie aan, wij verzorgen het voor u!</p>
+                    <h3 id="huisstijl" class="article__subheader">Inlogpagina in uw eigen huisstijl</h3>
+                    <p>Via een inlogpagina kunnen uw gasten inloggen om gebruik te kunnen maken van draadloos internet. En natuurlijk is het leuk dat deze inlogpagina past bij uw huisstijl! Bij KPN WiFi HotSpots kunt u de inlogpagina vier keer per jaar kosteloos door ons laten personaliseren naar uw wensen. Een mooie achtergrond, uw logo, de kleuren van uw bedrijf, het kan allemaal. En wij verzorgen het voor u!</p>
+                    <h3 id="wettelijke-eisen" class="article__subheader">Wettelijke eisen</h3>
+                    <p>KPN WiFi leeft de wettelijke verplichtingen rond dataretentie en justitieel aftappen na.</p>
+                    <h3 id="marketingmateriaal" class="article__subheader">Gratis marketingmateriaal</h3>
+                    <p>Om kenbaar te maken dat u WiFi aanbiedt op uw locatie hebben we marketingmateriaal ter beschikking. Dit kunt u geheel kosteloos bestellen.</p>
+                    <h3 id="social-login" class="article__subheader">Social login (optioneel)</h3>
+                    <p>Het is ook mogelijk om gebruik te maken van social login. Gasten kunnen dan inloggen met hun Facebook-account, e-mailadres of door het beantwoorden van vragen (u kunt drie vragen uitkiezen om aan uw gast te stellen). Inloggen via Facebook kan met een like of check-in. Op deze manier maakt u gebruik van het sociale netwerk om uw eigen locatie te promoten.</p>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-ts-6 col-ts-xpl">
+                  <div class="article__part">
+                    <h3 id="multiservice" class="article__subheader">Multiservice WiFi (optioneel)</h3>
+                    <p>Uw WiFi-netwerk voldoet aan de nieuwste standaarden waarop aanvullende diensten worden aangeboden. Daarbij krijgt u een beveiligd WiFi-netwerk voor eigen gebruik of bedrijfstoepassingen. U bepaalt hiervoor een eigen SSID (netwerknaam) en een gescheiden WiFi-netwerk voor uw gasten.</p>
+                    <h3 id="mijn" class="article__subheader">Mijn HotSpots van KPN</h3>
+                    <p>KPN WiFi maakt gebruik van een bestelsysteem (Mijn HotSpots van KPN), waar u als locatiehouder toegang toe heeft. Hier kunt u bestellingen plaatsen, statistieken bekijken en bij problemen en vragen direct contact met ons opnemen.</p>
+                    <h3 id="kpn-fon" class="article__subheader">KPN Fon</h3>
+                    <p>U wordt onderdeel van het grootste publieke WiFi-netwerk van Nederland, waaronder het WiFi-netwerk van KPN Fon. KPN WiFi buitenshuis met KPN Fon Hotspots werkt volgens het geven en ontvangen principe, alleen krijgt u meer dan u geeft. U stelt een beetje van uw WiFi beschikbaar voor anderen, en u krijgt toegang tot ruim 800.000 zogeheten Fon HotSpots in Nederland en meer dan 17 miljoen Fon HotSpots wereldwijd. Via deze HotSpots krijgt u draadloos internet op uw smartphone, tablet op laptop. En het mooie is dat er wekelijks duizenden HotSpots bij komen. Gebruikers maken gebruik van de KPN Fon app en zullen uw locatie herkennen. Ook zullen zij waarderen dat u onderdeel bent van dit wereldwijde netwerk.</p>
+                    <h3 id="hervatten" class="article__subheader">Sessie hervatten</h3>
+                    <p>De ‘sessie hervatten’ functionaliteit zorgt ervoor dat uw gast maar één keer per dag hoeft in te loggen op een KPN WiFi HotSpot. Hierna zal de sessie automatisch worden hervat op alle KPN WiFi HotSpots-locaties.</p>
+                    <h3 id="bandbreedtemanagement" class="article__subheader">Internetlijn en bandbreedtemanagement</h3>
+                    <p>KPN legt in principe haar eigen internetlijn aan op uw locatie. In overleg kunnen we ook gebruik maken van reeds aanwezige internetlijnen. KPN maakt daarbij gebruik van ADSL, VDSL, Vectored DSL, FTTH glasvezel, Pairbonding en koppeling van diverse verbindingen (stacked). <br>Om te voorkomen dat één gebruiker alle bandbreedte van een locatie naar zich toetrekt, wordt een maximale bandbreedte per gebruiker, ofwel het gebruikersprofiel, ingesteld. Dit profiel is hetzelfde voor alle gasten die gebruikmaken van dezelfde lijn. Indien nodig wordt de bandbreedte op locatie verhoogd om snel internet te blijven waarborgen. Als een gebruiker bedoeld of onbedoeld de dienstverlening negatief beïnvloedt wordt deze gebruiker en het verkeer geïsoleerd zodat andere gebruikers hier geen hinder van ondervinden.</p>
+                    <h3 id="apparatuur" class="article__subheader">Professionele apparatuur, Installatie en projectmanagement</h3>
+                    <p>KPN WiFi levert en installeert de netwerk apparatuur voor het draadloze internet en de internetverbinding. KPN WiFi maakt daarbij gebruik van hoog waardige kwaliteit Access Points, managed switches en andere benodigde componenten. In overleg met de locatiehouder wordt er voor de locatie een WiFi dekkingsplan opgesteld. Hierin wordt onder andere beschreven waar op de locatie het draadloze internet wordt geïnstalleerd. KPN WiFi gebruikt professionele access points met een bandbreedte van 300Mbps die gebruik maken van ‘bandsteering’. Dit is een techniek waarbij apparaten die gebruik kunnen maken van 5 GHz gedwongen worden daarvan gebruik te maken, zodat op de 2.4 GHz frequentie ruimte wordt vrijgemaakt voor apparaten die geen 5 GHz ondersteuning hebben. Ook maken de access points gebruik van ‘adaptive antenna technology’, waarmee radioverbindingen automatisch geconcentreerd worden in de richting waar een gebruiker zich bevindt en deze ook blijft volgen. Dit in plaats van het standaard 360 graden rondstralen van een standaard access point. Hierdoor wordt niet alleen het uitgezonden signaal richting de gebruiker versterkt, maar wordt ook de ontvangstgevoeligheid voor het signaal vanaf de gebruiker vergroot. Toch blijft het maximale zendvermogen binnen de wettelijke grenzen. Het effectieve bereik van dit access point kan hierdoor tweemaal zo groot zijn als een ‘standaard’ access point.</p><a href="bestellen.html" class="kpn-button h-ts">Aanvragen KPN WiFi HotSpot</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="aanvragen__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="aanvragen">
+              <div class="centered-line"></div>
+              <div class="button-background"><a href="bestellen.html" class="kpn-button">Bestellen KPN WiFi HotSpot</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="prefooter__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="prefooter">
+              <div class="row">
+                <div class="col-xs-12 col-ts-3">
+                  <div class="kpn-logo imgch"><a href="http://www.kpn.com/" target="_blank"><img src="img/kpn-logo-diapositief-353x160px.png"/></a></div>
+                </div>
+                <div class="hidden-xs-ls col-ts-9">
+                  <div class="secondary-nav">
+                    <ul class="secondary-nav__list">
+                      <li class="secondary-nav__item secondary-nav__item--service"><a href="service-en-contact.html"><span class="h-ts v-sm">Service & Contact</span><span class="h-xs v-ts h-sm">Service</span></a></li>
+                      <li class="secondary-nav__item"><a href="pdf/KPN-WiFi-Handleiding.pdf" target="_blank">Handleiding</a></li>
+                      <li class="secondary-nav__item"><a href="pdf/KPN-WiFi-Dienstbeschrijving.pdf" target="_blank">Dienstbeschrijving</a></li>
+                      <li class="secondary-nav__item"><a href="locaties.html"><span class="h-ts v-sm">KPN WiFi HotSpot locaties</span><span class="h-xs v-ts h-sm">Locaties</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__outer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="footer">
+              <div class="footer-nav">
+                <ul class="footer-nav__list">
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="over-kpn-wifi-hotspots.html">Over KPN WiFi HotSpots</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="service-en-contact.html">Service & Contact</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="bestellen.html">Bestellen</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="pdf/KPN-WiFi-Handleiding.pdf" target="_blank">Handleiding</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="pdf/KPN-WiFi-Dienstbeschrijving.pdf" target="_blank">Dienstbeschrijving</a></li>
+                  <li class="footer-nav__item footer-nav__item--mobile"><a href="locaties.html">KPN WiFi HotSpot locaties</a></li>
+                  <li class="footer-nav__item"><a href="algemene-voorwaarden.html" target="_blank">Algemene voorwaarden</a></li>
+                  <li class="footer-nav__item"><a href="cookies.html">Cookies</a></li>
+                  <li class="footer-nav__item"><a href="pdf/KPN-Algemene-Leveringsvoorwaarden-Nederlands.pdf" target="_blank">KPN Algemene Leveringsvoorwaarden</a></li>
+                  <li class="footer-nav__item"><a href="pdf/KPN-Specifieke-Contractvoorwaarden-En-Bepalingen-Online.pdf" target="_blank">Specifieke Voorwaarden en Bepalingen</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/bootstrap-modals.min.js"></script>
+  <script src="js/neo.min.js"></script>
+  <script src="js/cookie_warning.js"></script>
+  <script src="js/contactform.js"></script>
+</html>

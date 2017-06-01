@@ -1,0 +1,161 @@
+extends default
+block head
+	- var devVersion = true
+	- var pageTitle = 'Recreatieparken'
+	- var bodyClass = 'lp recreatie-lp'
+	- var quotes = true	
+block content
+	.hero__outer
+		.hero__home-visual-mobile.imgc: img(src="img/160108-KPN-WiFi-HotSpots-Recreatie-LP-HEADER-VISUAL-SMARTPHONE-q50.jpg")
+		.container
+			.row
+				.col-xs-12
+					.hero
+						.row
+							.col-xs-12.col-sm-7.col-md-8
+								.hero__text-box
+									.hero__text.hero__text--home
+										h1.hero__header Word met uw recreatiepark ook een KPN&nbsp;WiFi&nbsp;HotSpot
+										h2.hero__subheader Bied uw gasten snel en betrouwbaar draadloos internet
+							.hidden-xs-ts.col-ts-8.col-ts-offset-2.col-sm-5.col-sm-offset-0.col-md-4
+								+bel-mij-terug('desktop', 'recreatie')
+	.aanbod__outer
+		.container
+			.row
+				.col-xs-12
+					.aanbod
+						.aanbod__content
+							.aanbod__logo.imgc: img(src="img/kpn-logo-280x118px.png")
+							h3.aanbod__header Tijdelijk aanbod#[span.colon :]
+								img(src="img/kpn-egg-ff9900-300x273px.png" width="100%")
+							ul.aanbod__list
+								li.aanbod__item.aanbod__item--1st Gratis technisch haalbaarheidsonderzoek/site survey
+								li.aanbod__item.aanbod__item--2nd 50% korting op apparatuur en installatie
+	.bel-mij-terug--mobile__outer.hidden-sm-lg
+		.container
+			.row
+				.col-xs-12
+					+bel-mij-terug('mobile', 'recreatie')
+	.info__outer
+		.container
+			.row
+				.col-ts-6.col-md-4
+					.info.info--word-ook
+						h3.info__header Word ook een#[br.h-sg.v-ts] KPN WiFi HotSpot
+						p.info__body Een goede Internet voorziening is tegenwoordig niet meer weg te denken op een recreatiepark. Als KPN WiFi HotSpot biedt u uw bezoekers snel, betrouwbaar en draadloos internet.
+						a.info__cta.kpn-button(href="#{bestellenLink}") Bestellen
+				.col-ts-6.col-md-4
+					.info.info--voordelen
+						h3.info__header Voordelen voor uw recreatiepark
+						ul.info__list
+							li.info__list__item Geen gedoe, KPN regelt alles
+							li.info__list__item Snel, veilig en betrouwbaar internet
+							li.info__list__item Kies uw eigen business model
+							li.info__list__item Meertalige helpdesk 24/7
+							li.info__list__item Adverteerruimte op inlogportal
+						a.info__cta.arrow-link(href="#{overLink}") Bekijk alle voordelen
+				.col-ts-12.col-md-4
+					.info.info--risicos
+						h3.info__header Zelf internetprovider zijn?
+						p.info__body Het lijkt zo aantrekkelijk en eenvoudig: zelf een netwerk aanschaffen en uw gasten toegang geven tot uw eigen internetverbinding. Maar u neemt hiermee wel risico’s, die u voorkomt met KPN WiFi HotSpots.
+						a.info__cta.arrow-link(href="#{risicosLink}") Ontdek risico’s eigen WiFi
+	.citaat__outer
+		.container
+			.row
+				.col-xs-12
+					.citaat__slider
+						script.
+
+							var quotes = [];
+
+							function shuffle(o) {
+								for (var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+								return o;
+							}
+
+							function quote(quoteClass, quoteText, quotePortrait, quoteName, quoteRole) {
+
+								var html = "";
+
+								html += "<div class=\"citaat citaat--"+quoteClass+"\">"
+								html += "<div class=\"row\">"
+								html += "<div class=\"col-xs-6 col-xs-offset-3 hidden-ls-lg\">"
+								html += "<div class=\"citaat__portrait imgc\"><img src=\"img/"+quotePortrait+"\"></div>"
+								html += "</div>"
+								html += "<div class=\"col-xs-12 col-ls-8 col-ts-8\">"
+								html += "<div class=\"citaat__text-box__outer\">"
+								html += "<div class=\"citaat__text-box\">"
+								html += "<div class=\"citaat__text\">"+quoteText+"</div>"
+								html += "<div class=\"citaat__info citaat__info--xs\">"
+								html += "<div class=\"citaat__name\">"+quoteName+"</div>"
+								html += "<div class=\"citaat__role\">"+quoteRole+"</div>"
+								html += "</div>"
+								html += "</div>"
+								html += "</div>"
+								html += "</div>"
+								html += "<div class=\"hidden-xs col-ls-4 col-ts-4\">"
+								html += "<div class=\"citaat__portrait imgc\"><img src=\"img/"+quotePortrait+"\"></div>"
+								html += "<div class=\"citaat__info-box__outer\">"
+								html += "<div class=\"citaat__info-box\">"
+								html += "<div class=\"citaat__info citaat__info--md\">"
+								html += "<div class=\"citaat__name\">"+quoteName+"</div>"
+								html += "<div class=\"citaat__role\">"+quoteRole+"</div>"
+								html += "</div>"
+								html += "</div>"
+								html += "</div>"
+								html += "</div>"
+								html += "</div>"
+								html += "</div>"
+
+								quotes.push(html);
+
+							}
+
+							quote('rakken', 'Klanten vinden een goede WiFi verbinding op de camping en in de haven net zo belangrijk en vanzelfsprekend als goede sanitaire voorzieningen. KPN Hotspots vult de behoefte van onze gasten op een uitstekende manier in.', 'circle-otto-spoelstra.jpg', 'Otto Spoelstra', 'Directeur Aquacamping en Jachthaven De Rakken');
+							quote('pierre-et-vacances', 'Op Camping Port Zelande bieden we geheel ontzorgd, onze kampeerders, door middel van het betrouwbare netwerk van KPN HotSpots, een goede WiFi oplossing.', 'circle-john-broekhuizen.jpg', 'John Broekhuizen', 'ICT Project & Process Manager Groupe Pierre & Vacances / Center Parcs');
+							//quote('paal', 'Gasten verlangen dat er op onze camping een goede WiFi dienst wordt aangeboden. Met KPN HotSpots bieden we onze gasten snel WiFi op ons recreatiepark.', 'circle-eric-jan-brummelhuis.jpg', 'Naam nog Onbekend', 'Functienaam Camping de Paal');
+							quote('dierenbos', 'WiFi is onmisbaar voor gasten op de Libéma-vakantieparken Dierenbos en Beekse Bergen. In bijvoorbeeld de bungalows, maar zeker ook op de kampeervelden. Met WiFi Hotspots van KPN wordt vakantie vieren nóg leuker.', 'circle-marleen-van-eerd.jpg', 'Marleen van Eerd', 'Management assistente Beekse Bergen en Dierenbos');
+							quote('koornmolen', 'Onze gasten waarderen het betrouwbare WiFi netwerk van KPN op onze camping. Via social media kunnen onze gasten hun vakantiebelevenissen direct delen met familie en vrienden.', 'circle-vanessa-vos.jpg', 'Vanessa Vos', 'Parkmanager Camping de Koornmolen');
+
+							quotes = shuffle(quotes);
+
+							for(var i = 0; i < quotes.length; i++) {
+								document.write(quotes[i]);
+							}
+	.home-locaties__outer.hidden-xs-ls
+		.container
+			.row
+				.col-ts-12
+					.home-locaties
+						h3.home-locaties__header Een greep uit de meer dan 4.000 KPN WiFi HotSpot locaties:
+						.home-locaties__logos
+							.row
+								.col-xs-12.col-ts-3.col-md-2
+									.home-locaties__logo-box__outer
+										.home-locaties__logo-box
+											.home-locaties__logo.home-locaties__logo--landal.imgc: img(src="img/#{landalLogo}")
+								.col-xs-12.col-ts-3.col-md-2
+									.home-locaties__logo-box__outer
+										.home-locaties__logo-box
+											.home-locaties__logo.home-locaties__logo--centerparcs.imgc: img(src="img/#{centerParcsLogo}")
+								.col-xs-12.col-ts-3.col-md-2
+									.home-locaties__logo-box__outer
+										.home-locaties__logo-box
+											.home-locaties__logo.home-locaties__logo--kuilart.imgc: img(src="img/#{kuilartLogo}")
+								.col-xs-12.col-ts-3.col-md-2
+									.home-locaties__logo-box__outer
+										.home-locaties__logo-box
+											.home-locaties__logo.home-locaties__logo--meerwijck.imgc: img(src="img/#{meerwijckLogo}")
+								.hidden-xs-sm.col-md-2
+									.home-locaties__logo-box__outer
+										.home-locaties__logo-box
+											.home-locaties__logo.home-locaties__logo--beekse-bergen.imgc: img(src="img/#{beekseBergenLogo}")
+								.hidden-xs-sm.col-md-2
+									.home-locaties__logo-box__outer
+										.home-locaties__logo-box
+											.home-locaties__logo.home-locaties__logo--verkrema.imgc: img(src="img/#{verkremaLogo}")
+						a.home-locaties__cta.arrow-link(href="#{locatiesLink}") Bekijk alle KPN WiFi HotSpot locaties
+	include _lp-footer
+
+block scripts
+	script(src="js/placeholder.js")
